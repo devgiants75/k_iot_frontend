@@ -1,0 +1,61 @@
+<!-- 
+  HTML 파일 실행
+  : 브라우저에서 웹 문서 확인 방법
+
+  1. 문서 단위 실행
+    : 파일 탐색기 - 확장자가 .html인 문서를 더블 클릭
+    : 웹 문서의 수정 내용이 실시간 업데이트 되지 않음
+
+  2. Live Server 실행
+    : 웹 문서 내용이 실시간으로 웹 브라우저에서 인식
+    - 단축키: alt + l + o
+    - live server 기본 브라우저 설정
+      Live Server › Settings: Custom Browser
+        > chrome 설정
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>c_element.html</title>
+</head>
+<body>
+  안녕하세요. 첫 번째 줄입니다.
+  안녕하세요. 두 번째 줄입니다.
+  <!-- p요소: paragraph(단락, 문단) -->
+  <p>
+    모든 요소의 내용은 없는 것이 기본값
+    - p 요소 내부에서는 줄바꿈되지 않음
+    <!-- 
+      br요소: line break(줄바꿈) 
+      - HTML 소스 코드 내에서 Enter(줄바꿈)은 브라우저에 적용되지 않음
+      - 닫히는 태그가 없는 요소(빈 요소)
+        : 열리는 태그의 닫히는 꺽쇠(>)에 슬래시를 넣어 끝 태그 작성 권장
+    -->
+    <br />
+    안녕하세요
+    <br />
+    반갑습니다
+  </p>
+
+  <!-- h1요소: heading(제목) -->
+  <h1>제목을 만드는 요소</h1>
+
+  <!-- cf) 요소의 중첩 순서(열리는 순서에 반대하여 닫혀야 함) -->
+  <p>안녕하세요 <strong>이승아입니다.</strong></p>
+
+  <!-- 
+    HTML의 대소문자 구분
+    : 내용의 경우 대소문자를 구분하여 작성!
+    : 태그명은 대소문자 구분 X
+
+    ! 소문자 요소명 사용 권장 !
+    : XHTML과 같은 엄격한 문서 유형에서는 소문자 미사용 시 오류로 인지!
+  -->
+  <br />
+  <BR />
+  <Br />
+</body>
+</html>
