@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>d_table.html</title>
+  <style>
+    table, th, td {
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    ! 테이블(표)
+      : 행(row), 열(column) 그리고 쉘(cell)로 이루어짐
+
+      - 행(row): 가로
+      - 열(column): 세로
+  -->
+  <table>
+    <!-- 테이블 구조를 정의하는 최상단 요소 -->
+    <caption>표의 제목을 만드는 태그</caption>
+    <!-- 
+      표의 제목 또는 설명 삽입: 제목이 표의 위쪽 중앙에 표시
+      - 필수값 X, 스크린 리더 사용자에게 표를 설명
+    -->
+    <!-- 
+      tr 태그: table row(각 행)
+      td 태그: table data(일반적인 테이블 셀)
+      th 태그: table header(테이블의 제목 셀, 기본적으로 굵은 글씨 표현)
+    -->
+    <tr>
+      <!-- 1행 -->
+      <th>1행 1열</th>
+      <th>1행 2열</th>
+      <th>1행 3열</th>
+    </tr>
+    <tr>
+      <!-- 2행 -->
+      <td>2행 1열</td>
+      <td>2행 2열</td>
+      <td>2행 3열</td>
+    </tr>
+    <tr>
+      <!-- 3행 -->
+      <td>3행 1열</td>
+      <td>3행 2열</td>
+    </tr>
+  </table>
+
+  <table>
+    <caption>학생 출석부</caption>
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>출석 여부</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>이승아</td>
+        <td>참여</td>
+      </tr>
+      <tr>
+        <td>이도경</td>
+        <td>불참</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>총 참여 인원</td>
+        <td>1</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <!-- 
+    ! 테이블 병합
+
+    행 단위 병합(rowspan)
+      : 여러 셀이 여러 행에 걸쳐 확장되어야 할 때 사용
+      EX) rowspan="2" 적용 시, 해당 셀이 아래쪽으로 2행만큼 확장
+
+    열 단위 병합(colspan)
+  -->
+  <hr />
+  <table>
+    <caption>rowspan 예제</caption>
+    <tr>
+      <!-- 
+        행의 병합이 이루어지는 경우
+        병합될 행이 제거되지 않으면 
+        - 행 밀림 현상이 발생
+      -->
+      <td rowspan="2">첫 번째 행의 첫 번째 셀</td>
+      <td>첫 번째 행의 두 번째 셀</td>
+    </tr>
+    <tr>
+      <!-- <td>두 번째 행의 첫 번째 셀</td> -->
+      <td>두 번째 행의 두 번째 셀</td>
+    </tr>
+  </table>
+
+  <table>
+    <caption>colspan 예제</caption>
+    <tr>
+      <td colspan="2">첫 번째 행의 첫 번째 셀</td>
+      <!-- <td>첫 번째 행의 두 번째 셀</td> -->
+    </tr>
+    <tr>
+      <td>두 번째 행의 첫 번째 셀</td>
+      <td>두 번째 행의 두 번째 셀</td>
+    </tr>
+  </table>
+</body>
+</html>
