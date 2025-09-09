@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>g_head.html</title>
+  <style>
+    body {
+      background-color: powderblue;
+    }
+    h1 {
+      color: red;
+    }
+    p {
+      color: blue;
+    }
+  </style>
+  <!-- 
+    style 태그: css 스타일 코드를 html 코드 내에서 작성
+        >> 다른 웹 문서에서 재사용 불가!
+    link 태그: 외부 css 파일과 html 파일을 연결
+        >> rel 속성(relationship, 필수 속성) - 가져올 문서가 해당 HTML과 어떤 관계인지 명시
+        >> href 속성(hypertext reference, 필수 속성)
+          - 브라우저가 참조할 문서의 경로 명시
+  -->
+  <link rel="stylesheet" href="./g_head.css">
+
+  <!-- 
+    script 태그
+    : js 기능 코드를 HTML 코드 내에서 작성 또는 .js 파일 연결
+
+    ? cf) 콘솔창 확인
+      - 브라우저에서 f12 (개발자 도구 > Console창)
+  -->
+  <script>
+    console.log('IoT 국비 수업 0909');
+  </script>
+</head>
+<body>
+  <h1>웹 문서의 제목</h1>
+  <p>웹 문서의 내용</p>
+
+  <!-- 
+    브라우저가 웹 문서의 구조를 모두 파악한 뒤 기능 사용을 권장!
+  -->
+  <script src="./g_head.js"></script>
+</body>
+</html>

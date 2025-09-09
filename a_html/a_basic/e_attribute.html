@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e_attribute.html</title>
+</head>
+
+<body>
+  <!-- 
+    ? cf) 단축키
+      - HTML 주석 단축키: ctrl + /
+      - HTML 파일 Live Server 실행 단축키: alt + l + o
+      - HTML 파일 코드 정렬(Prettier) 단축키: ctrl + k + f
+      
+      - VSC 줄 복사: alt + shift + 방향키   
+  -->
+  <!-- 
+    ! HTML 속성(Attribute)
+      - 정의) 웹 페이지 구조를 정의하는 'HTML 요소'에 추가 정보를 제공하는 메커니즘(형식)
+      - 형태) 속성명="속성값" - 쌍따옴표 사용 권장
+  -->
+
+  <!-- p요소 (paragraph): 자동 지정 속성 X (속성 의무가 없음!) -->
+  <p>의무 속성이 없는 p요소</p>
+
+  <!-- 
+    a요소 (anchor): href 속성이 자동 지정 
+    - Emmet 기능으로 자동 지정되는 속성은 해당 요소가 반드시 가져야 할 속성!
+  -->
+  <a href="https://www.naver.com">의무 속성인 href가 있는 a요소</a>
+
+  <!-- 
+    img요소 (image): src, alt 속성이 자동 지정
+    - src(source): 이미지 파일 소스의 경로 첨부
+    - alt(alter, 대체하다): 이미지를 표시할 수 없거나 스크린 리더기 사용 시의 대체 메시지
+
+    ? 픽사베이: 무료 이미지/동영상 다운로드 사이트
+  -->
+  <img 
+    src="../강아지이미지.jpg" alt="웃는 강아지 이미지" 
+    width="300" 
+    height="250" />
+
+  <p style="color: red;" title="빨간색 글자의 문단입니다.">빨간색 문단</p>
+
+  <p title="요소의 내용에 대한 설명">문단입니다.</p>
+</body>
+
+</html>
