@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a_text.html</title>
+</head>
+<body>
+  <!-- 
+  ! 1. 제목과 단락
+    1-1. <hn> 태그
+      - 하나의 웹 문서에는 하나의 h1 태그 작성 권장
+      - 주로 h1 ~ h3까지의 제목을 사용 (n: 1부터 6까지의 자연수)
+      - 숫자 크기와 글자 크기가 반비례
+  -->
+  <h1>안녕하세요 heading 요소입니다.</h1>
+  <h2>안녕하세요 heading 요소입니다.</h2>
+  <h3>안녕하세요 heading 요소입니다.</h3>
+
+  <p>안녕하세요 paragraph 요소입니다.</p>
+  <h4>안녕하세요 heading 요소입니다.</h4>
+  <h5>안녕하세요 heading 요소입니다.</h5>
+  <h6>안녕하세요 heading 요소입니다.</h6>
+
+  <!-- 
+    1-2. <p> 태그
+      - p태그 사용 시 앞선 내용과 줄바꿈이 자동 생성 
+
+    1-3. <br /> 태그
+      - p태그를 사용하지 않는 일반적인 텍스트 내에서 줄바꿈 생성
+      - 주로 p태그 내에 줄바꿈
+
+      cf) Void 요소(빈 요소): 내용 X, 닫히는 > 괄호에 / 첨부 권장
+  -->
+  <p>
+    안녕하세요. 만나서 반갑습니다. <br />
+    IoT 국비 수업입니다.
+  </p>
+
+  <!-- 
+    1-4. <span> 태그
+      - 인라인 레벨 요소: 내용 만큼만 너비를 차지
+      - 태그를 사용하지 않는 텍스트와 시각적 차이 X
+        : 다른 태그 내의 텍스트를 일부 디자인하거나 따로 지정할 경우 사용
+  -->
+  "일반 텍스트" <br />
+  <span style="color: coral">span 태그 적용 텍스트</span> <br />
+
+  일반 텍스트 내에서 
+  <span style="font-weight: bold;">span 태그를 사용하여</span> 
+  디자인하기
+
+  <hr />
+  <!-- 
+  2. 기타 텍스트 태그
+  
+  2-1. blockquote 태그 
+    - 인용문 태그 (인용: 다른 사람의 말을 가져다 씀)
+  -->
+  <blockquote>"안녕 만나서 반가워~"</blockquote>
+
+  <!--
+    2-2. <strong>, <b> 태그
+      - strong: 텍스트를 굵게 '강조'할 때 사용
+      - b: 텍스트를 굵게 '표시'할 때 사용
+  -->
+  <strong>굵은 글씨 strong</strong>
+  <b>굵은 글씨 bold</b>
+  
+  <br />
+
+  <!--
+  2-3. <em>, <i> 태그
+    - em(emphasize): 텍스트를 기울여 '강조'할 때 사용
+    - i(italic): 텍스트를 기울여 '표시'할 때 사용
+  -->
+  <em>기울인 글씨 emphasize</em>
+  <i>기울인 글씨 italic</i>
+</body>
+</html>
