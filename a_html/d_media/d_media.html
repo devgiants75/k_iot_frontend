@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>d_media.html</title>
+</head>
+
+<body>
+  <!-- 
+  ! 멀티미디어
+  : 이미지, 오디오, 비디오, PDF 등 여러 형태의 데이터
+  -->
+
+  <!-- 
+  <object data="현재동영상.mp4"></object>
+  <object data="현재오디오.mp3"></object> 
+  -->
+  <object data="정보처리기사20220424(교사용).pdf" width="400" height="500"></object>
+
+  <!-- 
+  embed요소: 대부분의 브라우저에서 모두 사용 가능
+  <embed src="현재동영상.mp4" type="" />
+  <embed src="현재오디오.mp3" type="" /> 
+  -->
+
+  <hr />
+  <!-- 
+    audio: 배경음악, 효과음 등의 오디오 파일
+    video: 비디오 파일
+
+    >> 두 요소의 속성과 사용법이 유사
+
+    controls 속성
+      : 오디오나 비디오 파일을 통제하는 컨트롤 바 생성
+
+    autoplay 속성
+      : 자동 실행
+
+    muted 속성
+      : 소리 제거
+
+    loop 속성
+      : 반복 재생
+  -->
+  <audio 
+    src="./현재오디오.mp3" 
+    controls 
+    autoplay
+  ></audio>
+
+  <video 
+    src="./현재동영상.mp4" 
+    width="300" 
+    controls 
+    autoplay 
+    loop
+  ></video>
+</body>
+
+</html>

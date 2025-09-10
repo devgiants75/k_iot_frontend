@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>c_image.html</title>
+</head>
+<body>
+  <!-- 
+    img 태그(image, 이미지)
+    : src, alt 속성을 필수로 가지는 이미지 요소
+
+    cf) 이미지를 기술적으로 웹 페이지에 삽입 X
+        - 해당 이미지에 링크되는 형식 
+
+    1) src(source): 소스파일
+    2) alt(alter, 대체)
+      : 화면 낭독기 사용 | 인터넷 불안정과 경로 불확실인 경우 텍스트 표기
+
+    +) width, height (너비, 높이) 속성
+      : 둘 중 하나만 지정 시 원본 이미지 비율로 나머지 값이 자동 계산
+  -->
+  <img src="현재이미지.jpg" alt="웃는 강아지">
+  <img src="현재이미지.jpg" alt="웃는 강아지" width="100">
+  <img src="현재이미지.jpg" alt="웃는 강아지" height="100">
+
+  <!-- 
+    ? cf) 크기 단위: px(절대값), %(상대값)
+    1) px
+      : 이미지의 크기를 픽셀로 지정
+    2) %
+      : 이미지의 크기를 부모 요소 또는 특정 요소를 기준으로 지정
+  -->
+  <!-- div(division: 구분, 분할) -->
+  <div 
+    style="
+      width: 300px; 
+      height: 300px; 
+      background-color: pink;
+    ">
+    <img src="현재이미지.jpg" alt="강아지" width="100px">
+    <!-- 
+      '%의 기본값'은 부모요소를 기준! 
+      : 현재 부모 요소의 너비가 300px이기 때문에
+      - 50%는 150px
+    -->
+    <img src="현재이미지.jpg" alt="강아지" width="50%">
+  </div>
+</body>
+</html>
