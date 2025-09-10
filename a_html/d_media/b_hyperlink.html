@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>b_hyperlink.html</title>
+</head>
+<body>
+  <!-- 
+    ! === 경로(절대 경로 VS 상대 경로) ===
+      a 태그 - href 속성: 연결할 문서의 수신처 작성 (웹 문서 경로)
+      img 태그 - src 속성: 출력할 이미지의 수신처 작성 (이미지 경로)
+
+      ? 1. 절대 경로
+        : 위치와 상관없이 항상 같은 주소를 가리킴
+        - 다른 웹 사이트에서 호스트되는 완전한 URL 주소
+        - 보통 외부 웹 사이트에 연결 또는 외부 이미지 출력 시 사용
+        EX) 형식: https://도메인/폴더/파일명
+
+        장점) (웹 문서의) 위치와 상관없이 항상 동일한 리소스(값)를 가짐
+            +) '외부 사이트'로의 링크 생성 시 필수!
+
+        단점) 구조가 바뀔 경우(도메인 변경 시) 업데이트 필수!
+
+      ? 2. 상대 경로
+        : (현재) 웹 사이트 내의 리소스(값) 위치를 지정
+        - 웹 사이트 내부에서 다른 문서나 리소스로의 링크 생성 시 주로 사용
+        - 슬래시(/)와 마침표(.)를 사용하여 현재의 파일을 기준으로 데이터 표시
+  -->
+  <h2 id="absolute">절대 경로 사용</h2>
+  <a href="https://www.w3.org">W3C(World Wide Web)</a>
+
+  <h2 id="relative">상대 경로 사용</h2>
+  <!-- 
+    # 1. 같은(현재) 디렉토리(폴더)에 있는 파일 
+    : d_media 폴더
+    : './파일명' OR 그냥 '파일명'
+    - 지금 해당 HTML 파일이 있는 폴더에 있는 리소스 연결 
+  -->
+  <a href="./a_hyperlink.html">b에서 a로 이동</a>
+  <a href="a_hyperlink.html">b에서 a로 이동</a>
+
+  <!-- 줄 복사 단축키: alt + shift + 방향키 -->
+  <a href="https://www.naver.com">
+    <img src="./현재이미지.jpg" alt="현재 디렉토리의 강아지 이미지" width="300">
+  </a>
+  <a href="https://www.naver.com">
+    <img src="현재이미지.jpg" alt="현재 디렉토리의 강아지 이미지" width="300">
+  </a>
+  <!-- 
+    # 2. 상위 디렉토리에 있는 파일
+    : a_html 폴더
+    : ../파일명
+    - 현재 폴더보다 한 단계 위(부모 폴더)에 있는 파일을 불러옴
+    +) ../를 여러 번 쓰면 부모 폴더 단계로 계속 올라갈 수 있음
+  -->
+  <hr />
+  <a href="../a_basic/a_html.html">상위 디렉토리로 이동</a>
+  <a href="../../z_better_comments.html">여러 단계의 상위 디렉토리로 이동</a>
+
+  <a href="#">
+    <img src="../상위이미지.jpg" alt="상위 디렉토리의 이미지" width="300">
+  </a>
+
+  <!-- 
+    # 3. 하위 디렉토리에 있는 파일
+    : '하위폴더' 폴더
+    : ./하위폴더명/파일명 OR 하위폴더명/파일명
+    - 지금 폴더 안에 있는 하위 폴더로 들어가 파일을 불러옴
+  -->
+  <hr />
+  <a href="./하위폴더/subdirectory.html">subdirectory로 이동</a>
+  <a href="하위폴더/subdirectory.html">subdirectory로 이동</a>
+  <img src="./하위폴더/하위이미지.jpg" alt="하위 폴더의 이미지" width="100">
+  <img src="하위폴더/하위이미지.jpg" alt="하위 폴더의 이미지" width="100">
+
+  <hr />
+  <!-- 
+    ! id 속성: 하나의 문서에서 요소를 고유하게 지정하는 속성
+      - 하나의 문서 전체에 단 하나만 존재!
+  -->
+  <p id="one">id 속성 연습1</p>
+  <p id="two">id 속성 연습2</p>
+
+  <!-- 
+    ! 현재 문서 내에서의 이동
+    : 각 요소를 구분하는 고유 식별자 id 속성을 수신처로 지정
+    - href="#id명"
+  -->
+  <img src="./현재이미지.jpg" alt="첫 번재 이미지" id="first">
+  <img src="./현재동영상.mp4" alt="두 번재 이미지" id="second">
+  <img src="./현재이미지.jpg" alt="세 번재 이미지" id="third">
+  <img src="./현재동영상.mp4" alt="네 번재 이미지" id="fourth">
+
+  <hr />
+  <img src="./현재이미지.jpg" alt="">
+  <a href="#first">첫 번째 이미지로 이동</a>  <br />
+  <a href="#second">두 번째 이미지로 이동</a> <br />
+  <a href="#third">세 번째 이미지로 이동</a>  <br />
+  <a href="#fourth">네 번째 이미지로 이동</a> <br />
+
+  <hr />
+  <a href="#absolute">절대 경로 제목</a>
+  <a href="#relative">상대 경로 제목</a>
+
+  <!-- 
+    ! 이메일로 링크
+    : href 속성 값에 "mailto:연결할이메일주소작성"
+  -->
+  <a href="mailto:devgiants75@naver.com">devgiants75로 이메일 보내기</a>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a_hyperlink.html</title>
+</head>
+<body>
+  <!-- 
+    ! a 태그(anchor, 닻)
+      : 링크 삽입
+      - 해당 요소를 클릭함으로써 현재의 페이지를 '넘어서' 연결된 페이지로 이동'
+      - Hyper(넘어서)Link(연결)
+      - 마우스를 링크 위로 이동 시 마우스 커서가 작은 손의 아이콘으로 변경
+
+      ? 1. 텍스트 링크
+        : 글자 밑줄 + 파란색으로 변경
+          > 한 번이라도 해당 링크에 접속한 이력이 있는 경우 자주색으로 변경
+          > CSS 스타일을 통해 변경 가능
+
+      ? 2. 이미지 링크
+        : 태그의 내용에 이미지 요소를 삽입(img 요소, image)
+  -->
+  <!-- 
+    ! href 속성
+    : hyper reference (이동할 페이지 주소값을 참조)
+
+    cf) 수신처에 # 기호 입력 시 해당 문서로 다시 이동 (새로고침)
+  -->
+  <a href="#">텍스트 링크</a>
+  <a href="https://www.naver.com">네이버 바로가기</a>
+
+  <a href="https://www.google.com">
+    <img src="../강아지이미지.jpg" alt="웃는 강아지 이미지(구글 바로가기)" width="300">
+  </a>
+
+  <!-- 
+    ? 하이퍼링크의 추가 속성
+
+    target 속성
+    : 링크를 여는 방법을 지정하는 속성
+
+    1) _self: 기본값, 동일한 창과 탭에서 열림
+    2) _blank: 새 창 또는 새 탭에서 열림 (기본값: 새 탭)
+  -->
+  <hr />
+  <a href="https://m.sports.naver.com/kbaseball/index" target="_self">
+    _self 속성 사용
+  </a>
+  <br />
+  <a href="https://m.sports.naver.com/kbaseball/index" target="_blank">
+    _blank 속성 사용
+  </a>
+</body>
+</html>
