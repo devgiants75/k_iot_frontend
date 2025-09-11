@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z_div.html</title>
+  <style>
+    .box {
+      width: 300px;
+      border: 1px solid black;
+      margin: 10px;
+    }
+    
+    .highlight {
+      color: yellow;
+      background-color: black;
+    }
+
+    /* 기호 뒤에 속성명 붙여쓰기! */
+    #unique-one {
+      background-color: lightblue;
+    }
+
+    #unique-two {
+      background-color: lightcoral;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    ! div 태그: division(구분, 분할)
+      > 웹 페이지의 내용에 논리적인 구분을 정의하는 태그
+      - CSS(스타일), JS(기능)을 적용하기 위한 단위
+
+      cf) id(개별 요소 지정), class(그룹 요소 지정) 속성
+  -->
+
+  <!-- 
+    ! class 속성: 여러 개의 요소를 묶는 속성 
+      - 하나의 웹 문서에 동일한 속성값 여러 개의 요소에 지정 가능
+      - 하나의 요소에 여러 개의 class 속성 지정 가능 (띄어쓰기 구분)
+
+      >> 마침표(.) 문자 뒤에 이어서 클래스명 입력
+  -->
+  <div class="box highlight">class 속성</div>
+  <div class="box">class 속성</div>
+  <div class="box highlight">class 속성</div>
+  <div class="box">class 속성</div>
+
+  <!-- 
+    ! id 속성: 단 하나의 요소를 지정하는 속성
+      - 하나의 웹 문서에서 단 하나의 속성값을 하나의 요소에 지정
+
+      >> 샾(#) 문자 뒤에 이어서 아이디명 입력
+  -->
+  <div id="unique-one">id 속성 1</div>
+  <div id="unique-two">id 속성 2</div>
+
+  <!-- 
+    cf) id/class 명명규칙
+      1. id 속성은 유일성 보장
+      2. 대소문자 구분 (header != Header)
+      3. 숫자로 시작 가능 (권장 X)
+      4. 여러 개의 단어 사용 시(복합어): -, _ 사용 권장  
+  -->
+</body>
+</html>
