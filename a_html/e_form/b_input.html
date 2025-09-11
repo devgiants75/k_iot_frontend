@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>b_input.html</title>
+  <style>
+    h2 {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>input 태그의 type 속성</h1>
+  <!-- 
+    input 요소: 기본 너비 20자 (초과된 내용은 화면상 생략)
+
+    cf) 많은 내용 작성 시 textarea 사용 권장
+  -->
+
+  <h2>1. text & password 속성값</h2>
+  <!-- 
+    text: 일반 텍스트 (기본값 / 아이디, 이름, 주소 등 한 줄짜리)
+    password: 입력 내용 확인 X (민감 정보)
+  -->
+  <form>
+    <label>
+      아이디
+      <!-- value 속성: 초기값 지정 (수정 가능) -->
+      <input type="text" size="10" maxlength="5" value="qwe123">
+    </label>
+    <label>
+      비밀번호
+      <input type="password" size="" maxlength="" value="">
+    </label>
+  </form>
+
+  <h2>2. search & url & email & tel 속성</h2>
+  <!-- 
+    text 입력을 기본 동작 & 각 용도에 맞게 기능을 추가
+    >> 시각적으로는 text와 동일
+  -->
+  <input type="search">
+  <input type="url"> <br />
+
+  <form>
+    <input type="email">
+    <button type="submit">전송</button>
+  </form>
+
+  <input type="tel">
+
+  <h2>3. checkbox & radio</h2>
+  <!-- 
+    여러 항목 중에서 원하는 항목을 선택할 때 사용
+    checkbox (2개 이상 선택) / radio (1개만 선택)
+
+      ? 서버에 전달할 값을 value 속성을 사용하여 지정 (필수)
+
+      ? checked 속성: 기본 선택값 선택
+        >> bool 속성 (boolean 속성)
+          : 속성값 true / false - 속성명만으로도 사용 가능!!!!!
+        cf) 해당 속성을 사용하지 않으면 기본값 false 지정
+            해당 속성 지정 시 true 지정
+  -->
+  <input type="checkbox">
+  <input type="radio">
+
+  <form>
+    <fieldset>
+      <legend>2025 프로야구 가을야구 진출팀 예측</legend>
+      <label>
+        <input type="checkbox" value="lotte" checked> 롯데 자이언츠
+      </label>
+      <label>
+        <input type="checkbox" value="lg"> 엘지 트윈스
+      </label>
+      <label>
+        <input type="checkbox" value="hanhwa" checked> 한화 이글스
+      </label>
+      <label>
+        <input type="checkbox" value="ssg"> SSG 랜더스
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2025 프로야구 우승팀 예측</legend>
+      <!-- 
+        radio 속성의 name 속성
+        : 서버 폼에서 각각의 radio 요소를 구분하는 이름
+        > 같은 이름의 name 속성 중에는 반드시 한 가지만 선택!
+      -->
+      <label>
+        <input type="radio" value="lotte" name="winner"> 롯데 자이언츠
+      </label>
+      <label>
+        <input type="radio" value="kia" name="winner"> 기아 타이거즈
+      </label>
+      <label>
+        <input type="radio" value="samsung" name="winner2"> 삼성 라이온즈
+      </label>
+      <label>
+        <input type="radio" value="kiwoom" name="winner2"> 키움 히어로즈
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2026 프로야구 우승팀 예측 이벤트 결과 문자 수신동의</legend>
+      <label for="agree">동의함</label>
+      <input type="radio" id="agree" name="message">
+      <br />
+      <label for="disagree">동의 안 함</label>
+      <input type="radio" id="disagree" name="message">
+    </fieldset>
+  </form>
+</body>
+</html>

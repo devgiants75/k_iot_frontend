@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>c_input.html</title>
+  <style>
+    h2 {
+      color: lightcoral;
+    }
+  </style>
+</head>
+<body>
+  <h1>input 태그의 type 속성</h1>
+  <h2>4. Submit & Reset 속성값</h2>
+
+  <form>
+    <fieldset>배송 정보</fieldset>
+    <ul>
+      <li>
+        <label>
+          이름 <input type="text">
+        </label>
+      </li>
+      <li>
+        <label>
+          주소 <input type="address">
+        </label>
+      </li>
+      <li>
+        <label>
+          이메일 <input type="email">
+        </label>
+      </li>
+      <li>
+        <label>
+          배송지정 <input type="date">
+        </label>
+      </li>
+    </ul>
+
+    <!-- submit & reset 속성값은 하나의 form 요소 내에서 동작 -->
+    <input type="submit" value="버튼에 표시할 내용">
+    <input type="reset" value="RESET">
+  </form>
+
+  <h2>5. Range & Number 속성값</h2>
+  <!-- 
+    숫자값 입력 창
+    range: 슬라이드 막대
+    number: 스핀 박스 ▲▼
+
+      ? min 최소값 / max 최대값 (0 / 100)
+      ? step 간격 (기본 1)
+      ? value 초기값
+  -->
+  <input type="range" min="0" max="6" step="2" value="2">
+  <input type="number" min="10" max="20" step="3" value="20">
+
+  <h2>6. 기타 속성값</h2>
+  <!-- 
+    button 속성: 기본 버튼 (기능 X - 클릭 시의 이벤트는 JS에서 설정)
+    file 속성: 웹 브라우저에 [파일선택] | [찾아보기] 버튼 표시
+      > 첨부 파일 전송 시 프로그래밍 언어 활용
+    hidden 속성: 히든 필드 (화면에 보여지지 않는 내용)
+  -->
+    <input type="button" value="버튼이름">
+    <input type="file">
+
+    <!-- 
+    사용자에게 보여주지 않으면서 관리자가 알아야 하는 정보를 히든 필드로 입력 
+    -->
+    <input type="hidden" name="이름" value="서버로 전달할 데이터">
+</body>
+</html>
