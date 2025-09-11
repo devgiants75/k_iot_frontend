@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e_form_element.html</title>
+</head>
+<body>
+  <!-- 
+    cf) input 요소: 한 줄 정도 (20자 내외)의 간단한 내용을 입력받는 태그
+  -->
+  <h2>1. textarea</h2>
+  <!-- 
+    cols 속성: 텍스트 가로 영역 크기 지정 
+      - 한글의 경우 한 글자 당 약 2칸 차지
+    rows 속성: 텍스트 세로 영역 크기 지정 
+      - 지정 숫자보다 줄 개수가 많으면 스크롤 자동 생성
+  -->
+  <textarea 
+    name="폼 제출 시 데이터 구별 용" 
+    id=""
+    cols="20"
+    rows="5"
+  ></textarea>
+
+  <h2>2. Select & Option</h2>
+  <!-- 
+    select 선택 영역 내에 선택값을 option으로 작성
+
+    select 요소
+      ? size 속성: 화면에 표시할 드롭다운 항목 개수 지정
+      ? multiple 속성: 둘 이상의 항목 선택 시 사용 (bool 속성)
+
+    option 요소
+      ? value 속성: 선택 값에 대한 서버로 넘겨줄 값 지정
+      ? selected 속성: 기본 속성값 (미지정 시 첫 번째 옵션이 설정)
+  -->
+  <select name="목록 선택 데이터 구별 용" id="" size="2" multiple>
+    <option value="1">데이터 1</option>
+    <option value="2">데이터 2</option>
+    <option value="3" selected>데이터 3</option>
+    <option value="4">데이터 4</option>
+  </select>
+
+  <h2>3. Datalist & option</h2>
+  <!-- 
+    데이터 목록을 만들어주는 태그: input 태그와 연동
+    - input 값을 직접 작성하지 않고, '미리 만들어 둔 datalist' 값 중 선택
+    - input의 list 속성과 datalist의 id 속성으로 연결
+  -->
+  <label for="fruit">과일</label>
+  <input type="text" id="fruit" list="fruitList" placeholder="과일을 선택해주세요.">
+  <datalist id="fruitList">
+    <!-- 빈 요소: value값 명시 + value값 전달 -->
+    <option value="Apple" />
+    <!-- 내용값 작성 시: value값에 대한 부연 설명 -->
+    <option value="Banana">바나나</option>
+    <option value="Orange">오렌지</option>
+  </datalist>
+
+  <h2>4. button</h2>
+  <!-- 
+    input type 속성의 각각 속성값과 일치 
+    > 버튼임을 스크린 리더기로 정확하게 전달
+  -->
+  <button type="submit">제출</button>
+  <button type="reset">초기화</button>
+  <button type="button">버튼</button>
+</body>
+</html>
