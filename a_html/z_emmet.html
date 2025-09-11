@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z_emmet.html</title>
+</head>
+<body>
+  <!-- 
+    ! HTML5 기본 구조 생성
+    : ! + tab/enter
+  -->
+
+  <!-- 
+    ! 단순 태그
+    : 태그명 + tab/enter
+  -->
+    <div></div>
+    <p></p>
+    <a href=""></a>
+
+  <!-- 
+    ! 태그에 class, id 속성 추가
+    태그명.클래스명 / 태그명#아이디명
+  -->
+  <div class="container"></div>
+  <!-- div.container -->
+  
+  <div id="id-div"></div>
+  <!-- div#id-div -->
+  
+  <div class=""></div>
+  <!-- div. -->
+
+  <!-- 
+    ! 중첩과 형제 관계
+  -->
+  <!-- ? 자식 요소: 태그 안에 포함된 태그 (부모태그>자식 태그) -->
+  <!-- ul#unordered>li.item -->
+  <ul id="unordered">
+    <li class="item"></li>
+  </ul>
+
+  <!-- ? 형제 요소: 같은 선상의 요소 (형제요소+형제요소) -->
+  <!-- h1#heading+p#paragraph -->
+  <h1 id="heading"></h1>
+  <p id="paragraph"></p>
+
+  <!-- ! 반복 요소와 그룹핑 -->
+  <!-- ? 반복 요소 (태그 * 반복숫자값) -->
+  <!-- ol>li*5 -->
+  <ol>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ol>
+
+  <!-- div.division*3 -->
+  <div class="division"></div>
+  <div class="division"></div>
+  <div class="division"></div>
+
+  <!-- ? 그룹핑: 여러 emmet 기능을 동시 적용 -->
+  <!-- header 태그 내에 nav 태그 작성, header의 형제 요소로 footer 태그 작성 -->
+  <!-- header>nav+footer -->
+  <header>
+    <nav></nav>
+    <footer></footer>
+  </header>
+
+  <!-- (header>nav)+footer -->
+  <header>
+    <nav></nav>
+  </header>
+  <footer></footer>
+</body>
+</html>
