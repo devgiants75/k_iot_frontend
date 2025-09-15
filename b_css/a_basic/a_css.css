@@ -1,0 +1,13 @@
+/* 
+! a_css.css 파일 (외부 스타일 시트) 
+  : 외부 스타일 내에서는 style 태그 사용 X
+  - 스타일 규칙만을 나열! (선택자 + 선언)
+*/
+
+h1 {
+  text-decoration: underline;
+}
+
+p {
+  border: 5px dotted yellow;
+}

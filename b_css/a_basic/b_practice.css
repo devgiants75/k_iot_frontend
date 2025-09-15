@@ -1,0 +1,14 @@
+/* b_practice.css */
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: lightgoldenrodyellow;
+}
+
+td {
+  background-color: #ccc;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>c_cascading.html</title>
+  <link rel="stylesheet" href="./c_cascading.css">
+</head>
+<body>
+  <!-- 
+  ! 스타일 적용 우선순위 (중요도 > 적용 범위 > 소스 코드 작성 순서)
+    : '중요도' 확인 
+      , 같은 '중요도' 내에서는 '적용 범위' 확인
+      , 같은 '중요도' & '적용 범위' 내에서는 '소스 코드 작성 순서' 확인
+
+  # 1. 중요도
+    - 사용자 지정 스타일
+    - 제작자(개발자) 지정 스타일
+    - 브라우저 기본 스타일
+    : 사용자 >> 제작자 >> 브라우저
+
+  # 2. 적용 범위
+    : 같은 '중요도' 범위에서는 '적용 범위'에 따라 우선순위 결정
+    - 범위가 !좁을수록! 우선순위가 높아짐
+    - 정확히 필요한 요소에만 적용할 것을 권장!
+
+    1) !important: 어떤 스타일보다 우선 적용! 
+        >> 권장 X, 스타일 규칙 옆에 사용
+    2) 인라인 스타일: 해당 태그에 직접적으로 적용 (단 하나의 태그)
+    3) id 속성 스타일: 해당 id명을 가진 특정 태그에 적용 
+        >> 여러 문서에 같은 id 속성을 가진 요소는 동시 적용
+    4) class 속성 스타일: 해당 class명을 가진 모든 태그에 적용
+    5) 태그(요소) 스타일: 하나의 웹 문서에 같은 태그는 모두 적용
+
+  # 3. 소스 코드 작성 순서
+    : 같은 '중요도' & '적용 범위'일 경우
+    - 소스 코드 작성 순서로 우선순위 결정
+
+    >> 나중에 작성한 스타일이 먼저 작성한 스타일을 덮는다. (Cascading)
+  -->
+  <h1>스타일 캐스캐이딩</h1>
+
+  <h2 class="heading2">IoT CSS 수업</h2>
+  <p>2025 / 09 / 15 월요일</p>
+
+  <h2 class="heading2" id="unique">이번주 금요일부터 휴강입니다.</h2>
+  <p>다음주 일요일까지 휴강입니다.</p>
+
+  <h2>클래스 선택자가 없는 h2</h2>
+
+  <hr />
+  <!-- div#container>div#inner>p.text*3 -->
+  <!-- 
+  ! 스타일 상속
+  : 부모 요소에서 자식 요소로 스타일 전달
+
+  cf) 배경색 & 배경이미지는 상속 X
+  -->
+  <div id="container">
+    <div id="inner">
+      <span class="text">one</span>
+      <span class="text">two</span>
+      <span class="text">three</span>
+    </div>
+  </div>
+</body>
+</html>

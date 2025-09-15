@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a_css.html</title>
+  <style>
+    /* 
+      HTML 웹 문서 내부에서 CSS 스타일 코드 작성 가능 
+
+      === 스타일 규칙 ===
+      선택자 {
+        속성: 값;
+      }
+    */
+    h1 {
+      color: blue;
+      font-style: italic;
+    }
+
+    p {
+      background-color: black;
+      color: white;
+    }
+  </style>
+  <!-- 
+    ? 외부 스타일 시트 연결
+    : link 태그
+
+    cf) link 태그 - 해당 문서와 외부 소스 사이의 관계를 정의하는 태그
+      : 외부 소스(스타일 시트, 동적 JS 코드, 기타 파일 등)
+      > rel 속성: 해당 문서와의 관계(relative)
+      > href 속성: 외부 소스 파일 경로
+  -->
+  <link rel="stylesheet" href="./a_css.css">
+</head>
+<body>
+  <!-- 
+  ! CSS
+    : 웹 페이지의 시각적 요소를 제어하는 스타일 시트 언어
+    - CSS3
+
+    cf) HTML5
+
+  ! CSS Style 기본 구문
+    - 선택자: 스타일을 적용할 HTML 요소 지정
+    - 선언: {}(중괄호)로 감싼 형식, 여러 속성과 값을 포함
+
+    선택자 {
+      속성1: 값1;
+      속성2: 값2;
+      속성3: 값3;
+      ...
+    }
+  -->
+
+  <!-- 
+  # CSS 스타일 시트 # 
+  : 스타일 규칙(선택자 + 선언)을 한 군데 묶은 것
+
+  ? 1) 브라우저(웹 문서) 기본 스타일
+    : 각 태그가 가진 스타일
+  -->
+  <h1>제목(h1)이 가진 스타일</h1>
+  <p>문단(p)가 가진 스타일</p>
+  <a href="#">링크(a)가 가진 스타일</a>
+
+  <!-- 
+  ? 2) 사용자 스타일
+    : 사이트 제작자(개발자)가 만드는 스타일
+
+    - 인라인 스타일
+      : 시트 사용 X, 태그 내부에서 style 속성으로 직접 지정
+      - 직관적 / 재사용 불가
+
+    - 내부 스타일 시트
+      : 웹 문서에 사용할 스타일을 같은 문서 안에서! 정리
+      - head 태그 내에 style 태그로 정의 (내부에서 스타일 규칙 나열)
+
+    - 외부 스타일 시트
+      : 별도의 .css 파일에 스타일 작성
+        , HTML의 link 태그를 통해 연결
+        >> 여러 HTML 문서에 동일한 스타일 재사용 가능 (유지보수 용이)
+  -->
+  <hr />
+  <h1 style="font-size: large; font-weight: 900;">인라인 스타일(h1)</h1>
+  <p style="font-size: larger; font-weight: 100;">인라인 스타일(p)</p>
+
+  <h1>내부 스타일 시트(h1)</h1>
+  <p>내부 스타일 시트(p)</p>
+
+  <h1>외부 스타일 시트(h1)</h1>
+  <p>외부 스타일 시트(p)</p>
+</body>
+</html>
