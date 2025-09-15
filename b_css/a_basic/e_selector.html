@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e_selector.html</title>
+  <link rel="stylesheet" href="./e_selector.css">
+</head>
+<body>
+  <!-- 
+  ! 고급 선택자
+    : 연결 선택자 / 속성 선택자 / 가상 클래스 & 가상 요소
+  -->
+
+  <!-- 
+    # 1. 연결 선택자
+    : 2개 이상의 선택자를 연결하여 적용 대상을 제한 
+  -->
+  <div>
+    <h2>연결 선택자</h2>
+    <p>2개 이상의 선택자를 연결</p>
+
+    <ul>
+      <li>1. 자손(하위) 선택자 
+        <p>ul 태그의 자손(하위) 선택자</p>
+      </li>
+      <li>2. 자식 선택자</li>
+      <li>3. 인접 형제 선택자</li>
+      <li>4. (일반) 형제 선택자</li>
+    </ul>
+
+    <!-- p#selector -->
+    <p id="selector"></p>
+    <span>안녕</span>
+    <span>곤니치와</span>
+    <span>니하오</span>
+
+    <!-- 
+    # 2. 속성 선택자
+    -->
+    <h2>속성 선택자</h2>
+    <p>HTML 요소의 특정 속성을 기반으로 스타일 지정</p>
+
+    <input 
+      class="name special" 
+      type="text" 
+      name="firstname" 
+      value="FirstName"
+    />
+    <input 
+      class="name unique" 
+      type="text" 
+      name="lastname" 
+      value="LastName"
+    />
+
+    <input 
+      type="text" 
+      name="email" 
+      value="Email"
+    />
+
+    <br />
+
+    <a href="https://www.example.com" class="hello special hi">
+      Visit Example
+    </a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+/* 전체 선택자: * 기호 */
+* {
+  color: lightcoral;
+
+  /* 
+  모든 웹 문서에는 기본 여백이 존재! 
+  */
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+/* 타입 선택자: 태그명 */
+h2 {
+  color: blue;
+}
+
+p {
+  /* 범위가 좁을수록 우선순위 향상 */
+  color: green;
+}
+
+ul {
+  background-color: lightblue;
+}
+
+/* 클래스/아이디 선택자 */
+.btn {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.primary {
+  background-color: green;
+  color: yellow;
+}
+
+/* 
+그룹 선택자
+: 선택자 종류를 가리지 않음
+*/
+.secondary, li {
+  font-weight: 900;
+  padding: 10px;
+}
+
+div, a, .primary {
+  text-decoration: underline;
+}
