@@ -65,6 +65,41 @@
     <a href="https://www.example.com" class="hello special hi">
       Visit Example
     </a>
+
+    <h2>가상 클래스 선택자</h2>
+    <p>특정 HTML의 상태, 사용자의 동작, 문서 구조에 따라 스타일을 적용</p>
+
+    <!-- div.container>nav.navi>ul>(li>a)*4 -->
+    <!-- 
+    ! 가상 클래스 선택자의 종류
+
+    # 1. 사용자 동작에 반응
+    : :link, :visited, :active, :hover, :focus
+
+    # 2. 사용자 상태에 반응
+    : :checked, :enabled, :disabled
+    -->
+    <div class="container">
+      <nav class="navi">
+        <ul>
+          <li><a href="#">의료진/진료과</a></li>
+          <li><a href="#">진료예약/안내</a></li>
+          <li><a href="#">건강정보</a></li>
+          <li><a href="./a_css.css">고객서비스</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div>
+      <input type="radio" name="a" id="a1">
+      <label for="a1">1번</label>
+      
+      <input type="radio" name="a" id="a2">
+      <label for="a2">2번</label>
+      
+      <input type="radio" name="a" id="a3" disabled>
+      <label for="a3">3번(비활성화)</label>
+    </div>
   </div>
 </body>
 </html>

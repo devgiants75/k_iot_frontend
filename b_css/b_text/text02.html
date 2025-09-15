@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>text02.html</title>
+  <style>
+    .align {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    ! === 텍스트 스타일 ===
+    color 속성: 글자색 지정
+    text-align 속성: 텍스트 정렬
+    line-height 속성: 줄 간격 조절
+    text-decoration 속성: 텍스트 라인 속성
+    text-shadow 속성: 그림자 속성
+    text-transform 속성: 대소문자 변경 속성
+    letter-spacing & word-spacing 속성: 글자 간격 조정 속성
+  -->
+  <p style="color: red;">안녕하세요</p>
+  <p style="color: blue;">반갑습니다</p>
+  
+  <p style="color: #ff0000;">안녕하세요</p>
+  <p style="color: #0000ff;">반갑습니다</p>
+  
+  <p style="color: rgb(255, 0, 0);">안녕하세요</p>
+  <p style="color: rgb(0, 0, 255);">반갑습니다</p>
+  
+  <p style="color: rgba(255, 0, 0, 0.5);">안녕하세요</p>
+  <p style="color: rgba(0, 0, 255, 0.5);">반갑습니다</p>
+
+  <!-- 
+    ! text-align 속성
+    - 텍스트 '가로' 정렬
+    : start, end, center, right, left, justify, match-parent 
+
+    cf) justify
+  -->
+  <p class="align" style="text-align: left;">텍스트 정렬</p>
+  <p class="align" style="text-align: center;">텍스트 정렬</p>
+
+  <p class="align" style="text-align: justify;">텍스트 정렬 텍스트 정렬 텍스트 정렬 텍스트 정렬</p>
+
+  <!-- 
+  ! line-height 속성 (줄 간격)
+  : 기본값은 폰트 크기의 1.0배율
+  EX) 글자 크기가 16px인 문단의 줄 간격: 16px (위/아래 8px)
+
+  cf) line-height 속성값은 px(절대값) 단위 사용 X
+    : 현재 글자를 기준으로 배율 형식을 사용
+  -->
+  안녕하세요 <br>
+  반갑습니다
+
+  <p style="line-height: 2;">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</p>
+  
+  <p style="
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+
+    /* 줄 간격과 해당 텍스트의 높이를 일치: 세로 정렬 */
+    height: 100px;
+    line-height: 100px;
+  ">
+    HTML
+  </p>
+
+  <!-- 
+  ! text-decoration 속성 (텍스트 줄 표시 / a태그 스타일 제거) 
+  : none, underline, overline, line-through
+  -->
+  <p style="text-decoration: none">none</p>
+  <p style="text-decoration: underline">underline</p>
+  <p style="text-decoration: overline">overline</p>
+  <p style="text-decoration: line-through">line-through</p>
+
+  <a href="#" style="text-decoration: none;">하이퍼링크</a>
+
+  <!-- 
+  ! text-transform 속성 (텍스트 변환 / 영문자만 가능)
+  capitalize (대문자로 시작 + 나머지 소문자 표기)
+  uppercase (대문자 표기)
+  lowercase (소문자 표기)
+  -->
+  <div>
+    <p style="text-transform: capitalize;">text 변환 속성</p>
+    <p style="text-transform: uppercase;">text 변환 속성</p>
+    <p style="text-transform: lowercase;">TEXT 변환 속성</p>
+  </div>
+
+  <!-- 
+  ! letter-spacing(글자 사이 간격), word-spacing(단어 사이 간격)
+  -->  
+  <p style="letter-spacing: 4px;">leword-spacing</p>
+  <p style="word-spacing: 4px;">word spacing word spacing</p>
+
+  <!-- 
+  ! text-indent (들여쓰기)
+  -->
+  <p style="text-indent: 20px;">text indent 속성</p>
+</body>
+</html>

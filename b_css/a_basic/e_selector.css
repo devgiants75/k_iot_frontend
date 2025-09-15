@@ -111,3 +111,87 @@ a[href$=".com"] {
 *[class*="special"] {
   font-weight: 900;
 }
+
+/* = ========== = */
+.container {
+  background-color: black;
+  color: white;
+}
+
+.navi {
+  border: 5px solid lightblue;
+}
+
+/* 자손(하위) 선택자 */
+.navi ul {
+  list-style: none;
+  background-color: white;
+}
+
+.navi ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+/* 
+! 동작에 반응하는 가상 클래스
+1) :link
+  > 방문하지 않은 링크
+2) :visited
+  > 방문한 적 있는 링크 
+*/
+.navi a:link {
+  color: lightgray;
+}
+
+.navi a:visited {
+  color: purple;
+}
+
+/* 
+3) :active
+  > 웹 요소를 활성화하는 행위
+  - 클릭하고 있는 동안
+
+4) :hover
+  > 사용자 동작 중
+    마우스를 웹 요소에 올려놓는 행위
+*/
+.navi a:hover {
+  background-color: black;
+  color: white;
+}
+
+.navi a:active {
+  background-color: black;
+  color: yellow;
+}
+
+/* 
+5) :focus
+  > 사용자 동작 중
+    초점이 맞춰져 있는 행위
+*/
+.navi a:focus {
+  background-color: pink;
+  color: black;
+}
+
+/* 
+! 가상 클래스 (요소의 상태)
+
+input 요소 체크 시 
+label 태그 배경색 변경
+
+cf) 인접 형제 선택자
+해당 요소 이후의 첫 번째 형제 선택자에만 적용!
+*/
+input:checked + label {
+  background-color: lightsalmon;
+}
+
+input[type="radio"]:disabled + label {
+  background-color: #eee;
+  color: #888;
+  cursor: not-allowed;
+}

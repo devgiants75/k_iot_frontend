@@ -1,0 +1,14 @@
+#unique { color: yellow; }
+
+body p { color: blue; }
+
+.wrapper p { color: red; }
+
+p.special { color: green; }
+
+p#unique { color: pink; }
+
+/* 스타일 적용 범위가 '좁을수록' 우선 */
+p.special#unique { color: orange; }
+
+#unique { color: purple; }

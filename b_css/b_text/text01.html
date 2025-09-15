@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>text01.html</title>
+
+</head>
+<body>
+  <!-- 
+  ! 글자 스타일(Text Style)
+
+    1. 글꼴 자체의 스타일 (텍스트 자체에 적용)
+      : font-
+      font-family(글꼴)
+      font-size(글자 크기)
+        > 키워드(small / medium / large - x, xx단위까지 사용 가능 EX: xx-small)
+        > 단위 사용 (em, rem, px 등)
+      font-style(이탤릭체 표현, 기울임)
+        > italic, oblique (웹에서는 주로 italic)
+      font-weight(글자 굵기)
+        > 키워드(normal, bold, light, bolder, lighter)
+        > 단위 100 ~ 900 (기본 굵기 400)
+
+    2. 텍스트 레이아웃 스타일 (자간, 문자 정렬 등의 조작)
+  -->
+  <p style="font-size: 10px; font-style: italic; font-weight: normal;">
+    font-size 속성(단위) / font-style 속성(italic) / font-weight(예약어)
+  </p>
+
+  <!-- 브라우저 기본 글자 크기: 16px -->
+  <p style="font-size: 16px; font-style: oblique; font-weight: bold;">
+    font-size 속성(단위) / font-style 속성(italic) / font-weight(예약어)
+  </p>
+
+  <p style="font-size: 24px; font-style: normal; font-weight: lighter;">
+    font-size 속성(단위) / font-style 속성(italic) / font-weight(예약어)
+  </p>
+
+  <p style="font-size: small; font-weight: 100;">
+    font-size 속성(키워드) / font-weight(숫자값)
+  </p>
+
+  <p style="font-size: medium; font-weight: 400;">
+    font-size 속성(키워드) / font-weight(숫자값)
+  </p>
+
+  <p style="font-size: large; font-weight: 900;">
+    font-size 속성(키워드) / font-weight(숫자값)
+  </p>
+</body>
+</html>
