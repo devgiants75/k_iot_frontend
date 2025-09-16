@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>list.html</title>
+</head>
+<body>
+  <!-- 
+  ! list 스타일
+
+  1) list-style-type 속성
+  : ul요소(불릿 모양) & ol요소(번호 모양)
+
+  2) list-style-image 속성
+  : ul요소(불릿 대신 이미지 사용)
+
+  3) list-style-position 속성
+  : 목록 들여쓰기 속성
+
+  +) list-style 속성 (CSS 단축 속성)
+  : 위의 세 가지 속성을 한꺼번에 표시하는 속성
+  -->
+  <ul style="list-style-type: square;">
+    <!-- disc, circle, square -->
+    
+    <!-- li*4 -->
+    <li>Item 01</li>
+    <li>Item 02</li>
+    <li>Item 03</li>
+    <li>Item 04</li>
+  </ul>
+
+  <ol style="list-style-type: lower-alpha;">
+    <!-- 
+      decimal, roman(로마 숫자), alpha/latin(알파벳) 등
+    -->
+    <li>Item 01</li>
+    <li>Item 02</li>
+    <li>Item 03</li>
+  </ol>
+
+  <ul style="list-style-type: none;">
+    <li>목록 스타일 제거</li>
+  </ul>
+
+  <hr>
+  <!-- list-style-image는 불릿 크기만큼 작은 이미지여야 함! -->
+  <ul style="list-style-image: url('../강아지이미지.jpg');">
+    <li>불릿 대신 이미지</li>
+  </ul>
+
+  <hr>
+  <!-- inside는 불릿이 문장 안으로 들어옴: 줄 바꿈 시 들여쓰기 효과 -->
+  <ul style="list-style-position: inside;">
+    <li>안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요</li>
+  </ul>
+  <ul style="list-style-position: outside;">
+    <li>안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요</li>
+  </ul>
+</body>
+</html>

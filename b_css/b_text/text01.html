@@ -4,7 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>text01.html</title>
+  <style>
+    /* 
+      CSS 명령어를 사용하여 웹 브라우저가 해당 서체를 다운로드 할 것을 명시
+      : 글꼴 자체를 원격 서버에서 호출 가능 
+    */
+    @font-face {
+      font-family: 'Ria';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/RiaSans-ExtraBold.woff2') format('woff2');
+      font-weight: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'PerpetualSnow';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2508-2@1.0/PermanentSnow.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
 
+    @font-face {
+      font-family: 'Independent';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Dokrip.woff') format('woff');
+      font-weight: normal;
+      font-display: swap;
+    }
+  </style>
 </head>
 <body>
   <!-- 
@@ -24,6 +48,16 @@
 
     2. 텍스트 레이아웃 스타일 (자간, 문자 정렬 등의 조작)
   -->
+  <h2>글꼴 스타일(font-family)</h2>
+  <!-- 
+  글꼴의 경우 깨짐 방지를 위해 여러 개의 글꼴을 ,를 기준으로 나열 
+  +) 글꼴명 자체에 띄어쓰기가 있는 경우 ''작은 따옴표로 표기
+  -->
+  <p style="font-family: Ria">글꼴 적용 예시1</p>
+  <p style="font-family: PerpetualSnow;">글꼴 적용 예시2</p>
+  <p style="font-family: Independent;">글꼴 적용 예시3</p>
+
+  <hr />
   <p style="font-size: 10px; font-style: italic; font-weight: normal;">
     font-size 속성(단위) / font-style 속성(italic) / font-weight(예약어)
   </p>
