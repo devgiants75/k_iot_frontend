@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e_margin.html</title>
+  <style>
+    .margin {
+      width: 60px;
+      height: 60px;
+      display: inline-block;
+      border: 1px solid #222;
+    }
+
+    .margin-collapse {
+      width: 200px;
+      height: 50px;
+      /* 상하에만 마진 적용 */
+      margin: 30px 0; 
+    }
+
+    #box1 { background-color: lightblue; }
+    #box2 { background-color: lightcoral; }
+    #box3 { background-color: lightgoldenrodyellow; }
+  </style>
+</head>
+<body>
+  <!-- 
+  ! 마진(margin) 
+  : 두 박스 모델 사이의 여백
+  - 속성: 크기, 백분율, auto
+
+  cf) 마진을 사용하여 웹 문서 정렬 (중앙 정렬)
+
+  cf) 마진/패딩 모두 박스 모델의 속성값 지정 순서를 따름! (상 우 하 좌)
+  -->
+  <div class="margin" style="margin: 30px;"></div>
+  <div class="margin" style="margin: 30px 50px;"></div>
+  <div class="margin" style="margin: 10px 30px 20px;"></div>
+  <div class="margin" style="margin: 10px 20px 30px 40px;"></div>
+
+  <!-- margin/padding/border 동일한 속성 -->
+  <div class="margin" style="margin-top: 10px;"></div>
+  <div class="margin" style="margin-right: 10px;"></div>
+  <div class="margin" style="margin-bottom: 10px;"></div>
+  <div class="margin" style="margin-left: 10px;"></div>
+
+  <!-- 
+    cf) text(글자) 가로 기준 가운데 정렬
+      : text-align 속성 (center)
+
+    요소를 부모를 기준으로 중앙 정렬
+    : 가로축을 기준으로 좌우에 같은 값 마진 발생
+    - 중앙 정렬!
+    >> auto 
+      : 부모 요소에서 자식 요소의 너비값을 뺀 후 양 옆의 값을 1/2씩 차지
+  -->
+  <div style="width: 300px; height: 300px; background-color: lightblue;">
+    <div style="width: 100px; height: 100px; background-color: lightcoral; margin: 0 auto;"></div>
+  </div>
+
+  <!-- 
+  ! 마진 중첩 현상
+  : 세로 방향(top, bottom)에서 두 요소의 마진이 만나면
+    , 더 큰 값 하나만 적용
+    EX) 위 요소(margin-bottom: 30px)
+        아래 요소(margin-top: 50px)
+        >> 두 마진이 합쳐져서 80px 아니라! 큰 값이 50px만 적용
+  - 요소 사이의 간격이 필요 이상으로 커지는 것을 방지!
+
+  cf) 가로 방향은 마진 중첩(상쇄)가 되지 않음!
+    : 그대로 더해짐
+  -->
+  <div>
+    <!-- transparent: 부모 요소의 값을 상속 -->
+    <div 
+    class="margin-collapse" 
+    id="box1" 
+    style="border: 1px solid transparent;">첫 번째 박스</div>
+    <div class="margin-collapse" id="box2" style="border: 1px solid transparent;">두 번째 박스</div>
+    <div class="margin-collapse" id="box3" style="border: 1px solid transparent;">세 번째 박스</div>
+  </div>
+
+  <!-- 
+  ? 마진 중첩 현상 해소! (부모-자식 요소 간의 중첩 현상 방지)
+  1) padding 사용
+  2) border 사용
+  3) overflow 사용
+
+  ? 형제 요소끼리는 중간 요소 삽입 또는 display 설정이 필요
+  -->
+</body>
+</html>
