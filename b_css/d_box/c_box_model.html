@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>c_box_model.html</title>
+  <style>
+    #lsa {
+      width: 100px;
+      height: 250px;
+
+      /* 콘텐츠 < 패딩(여백) < 테두리 < 마진 */
+
+      /*
+        너비와 높이값 지정의 기본은 '콘텐츠 영역'까지만 차지
+        > 실제 크기값 계산에서 패딩과 테두리까지를 계산
+        > box-sizing 속성 
+          : 박스 모델 크기 계산
+          - content-box: 콘텐츠 영역 까지만! (기본값)
+          - border-box: 테두리 영역 까지!
+      */
+      padding: 10px;
+      border: 10px solid pink;
+      background-color: lightblue;
+      box-sizing: border-box;
+    }
+
+    #ldk {
+      width: 100px;
+      height: 100px;
+
+      background-color: lightcoral;
+    }
+
+    span {
+      width: 50px;
+      height: 50px;
+
+      background-color: lightgoldenrodyellow;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+    ! 박스 모델(Box Model)
+    : HTML은 각 요소를 박스 모델로 인식하여
+      , 요소의 크기/테두리/여백 등을 지정
+    > 블록 레벨 요소만! 인식!
+    
+    ? 콘텐츠 영역
+    ? 패딩(padding): 박스와 콘텐츠 사이의 영역
+    ? 테두리(border): 박스의 테두리
+    ? 마진(margin): 여러 박스 모델 사이의 여백
+
+  -->
+  <div id="lsa">
+    이승아
+    <!-- 블록 레벨요소 -->
+    <p>출생: 부산</p>
+  </div>
+
+  <div id="ldk">
+    이도경
+    <!-- 인라인 레벨요소 -->
+    <span>출생: 대전</span>
+  </div>
+
+  <!-- 
+  ! box-shadow 속성 (text-shadow와 동일하게 쓰임)
+
+  box-shadow: 수평거리 수직거리 흐림정도 번짐정도 색상 inset
+
+  - 수평/수직거리: 필수 속성
+    > 양수(요소의 오른쪽/아래쪽), 음수(요소의 왼쪽/위쪽)
+
+  - 흐림 정도: 생략 시 0을 기본 (진한 그림자)
+    > 값이 커질 수록 부드러운 그림자 표시 
+
+  - 번짐 정도: 기본값 0
+    > 양수(그림자 확대) / 음수(그림자 축소)
+
+  - 색상: 기본값 검은색
+    > 공백으로 구분하여 여러 색상 가능
+
+  - inset(box 속성값)
+    > 테두리 안쪽 그림자 표현
+  -->
+
+  <div style="
+    width: 100px; 
+    height: 100px; 
+    border: 1px solid black;
+    box-shadow: 2px -2px 3px blue;
+  "></div>
+  <div style="
+    width: 100px; 
+    height: 100px; 
+    border: 1px solid black;
+    box-shadow: 3px 3px 3px #666;
+  "></div>
+</body>
+
+</html>

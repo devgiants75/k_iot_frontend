@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>d_border.html</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+
+      display: inline-block;
+      margin: 10px;
+
+      background-color: lightblue;
+      text-align: center;
+      line-height: 100px;
+
+      /* 
+      border-width: 테두리 두께 지정 (기본값 1px) 
+      1) 단위 값 
+      2) 키워드 
+      */
+      border-width: 5px;
+
+      border-width: thin;
+      border-width: medium;
+      border-width: thick;
+    }
+
+    .boxes {
+      width: 100px;
+      height: 100px;
+
+      display: inline-block;
+      margin: 10px;
+
+      background-color: lightcoral;
+      border-style: solid;
+
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+  ! 박스 모델 구조: 콘텐츠 > 패딩 > 테두리 > 마진
+
+  cf) 박스 모델 방향
+    : 상(top) >> 우(right) >> 하(bottom) >> 좌(left)
+
+    1) 4개의 방향 모두 같게 지정: 값 1개
+    2) 상하 / 좌우 같게 지정: 값 2개 (상하 좌우)
+    3) 상 / 좌우 / 하 같게 지정: 값 3개 (상 좌우 하)
+    4) 4개의 방향 모두 다르게 지정: 값 4개 (상 우 하 좌)
+  -->
+
+  <!-- div.box*4 -->
+  <div class="box" style="border-style: solid;">테두리</div>
+  <div class="box" style="border-style: dotted;">테두리</div>
+  <div class="box" style="border-style: dashed;">테두리</div>
+  <div class="box" style="border-style: double;">테두리</div>
+
+  <div class="box" style="border-style: groove;">테두리</div>
+  <div class="box" style="border-style: inset;">테두리</div>
+  <div class="box" style="border-style: outset;">테두리</div>
+  <div class="box" style="border-style: ridge;">테두리</div>
+
+  <hr>
+  <div class="box" style="border-style: solid;  border-color: red;">테두리</div>
+  <div class="box" style="border-style: dotted; border-color: #00ff00;">테두리</div>
+  <div class="box" style="border-style: dashed; border-color: rgb(0, 0, 255);">테두리</div>
+  <div class="box" style="border-style: double; border-color: rgba(0, 0, 0, 0.5);">테두리</div>
+
+  <hr>
+  <div class="boxes" style="border-width: 5px;">테두리</div>
+  <div class="boxes" style="border-width: 10px 1px;">테두리</div>
+  <div class="boxes" style="border-width: 10px 3px 5px;">테두리</div>
+  <div class="boxes" style="border-width: 10px 7px 5px 3px;">테두리</div>
+</body>
+</html>

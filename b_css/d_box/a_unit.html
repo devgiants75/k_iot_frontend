@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a_unit.html</title>
+  <style>
+    * {
+      font-size: 20px;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+  ! CSS 값과 단위
+
+  cf) CSS 스타일 '형식'
+  선택자 {
+    == 스타일 규칙 ==
+    속성1: 속성값1;
+    속성2: 속성값2;
+  }
+
+  cf) CSS 스타일 '규칙'
+  : 속성과 '값'의 한 쌍
+  - 여러 개 나열의 경우 ;(세미콜론)으로 구분
+
+  ? 1. 속성(properties)
+    : 바꾸고 싶은 스타일의 종류 
+    EX) color, font-size, margin, background-color ...
+
+  ? 2. 값(values)
+    : 해당 속성에 할당되는 구체적 데이터
+    EX) red, 16px, 20%, #22ff22
+
+  cf) 상속
+    : color, font-family 등 부모로 부터 값이 상속 가능
+    - margin, width, background-color 등은 상속 되지 않음
+  -->
+
+  <!-- 
+  ! 길이 단위 총정리 (Length)
+  : CSS의 길이는 절대 단위 / 상대 단위로 나뉨
+
+  # 1. 절대 길이 (Absoulte)
+  : 화면/프린트 해상도와 무관하게 일관된 시각 크기를 의도할 때
+    > 단, 화면에서는 '물리적 크기와 완벽히 일치하지 않음'
+
+    - px(픽셀): 웹에서 가장 흔히 사용 / 웹 브라우저의 기본 크기 16px
+    - cm/mm/Q: 센티/밀리/사분의1mm (주로 인쇄 매체)
+    - in(인치): 1in = 96px
+
+  # 2. 폰트 기준 상대 길이 (Font-Relative)
+  : 글자 크기나 줄 간격을 기준으로 비례하도록 구성
+
+    - em: 요소의 font-size 기준으로 함! (컴포넌트 내부 상대 간격)
+      EX) A요소의 글자 크기가 16px = 1em / 20px = 1em
+
+    - rem(root em): 루트(html 요소)의 font-size 기준으로 함!
+      > 전체 타이포 스타일, 여백 일관화
+
+      cf) 글자 자체를 디자인 요소로 활용
+
+  # 3. 뷰포트 기반 (Viewport)
+  : 화면 크기에 맞춰 유동 레이아웃 구성
+
+    - vw(viewport width)
+    - vh(viewport height)
+      : 뷰포트의 너비, 높이의 백분율을 나타내는 단위
+
+  # 4. 백분율 (%)
+  : 기준은 속성마다 다름
+  - 부모 요소(상위 요소)의 크기에 따라 상대적인 크기를 설정
+  
+  cf) height속성에 % 단위 값은 상위 높이가 명시적!으로 작성될 때만 동작!
+
+  ! 시간 단위 
+  : 1초(s) = 1000밀리초(ms)
+  -->
+  <p style="font-size: 20px;">절대 길이 - px</p>
+
+  <div style="font-size: 20px;">
+    <!-- 해당 요소를 포함하는 요소(부모 요소)의 글꼴 크기 -->
+    <p style="font-size: 1em;">상대 길이 - em</p>
+
+    <!-- 해당 문서(전체 페이지)의 글꼴 크기 -->
+    <p style="font-size: 1rem;">상대 길이 - rem</p>
+  </div>
+
+  <div style="
+    background-color: lightblue;
+    /* 열러진 뷰포트 크기를 기준으로 변화 (상대적) */
+    width: 50vw;
+    height: 50vh;
+    font-size: 1.5rem;
+  ">상대 길이 - vw/vh</div>
+
+  <div style="width: 300px; height: 300px; background-color: lightcoral;">
+    <div style="
+        /* 부모 요소의 크기가 지정되지 않으면 자동 auto값 계산 (내용 크기 만큼만 차지) */
+        height: 50%;
+      ">
+      <div style="
+          background-color: lightgoldenrodyellow;
+          /* 상위 요소의 크기값이 지정되어 있지 않으면 최상위 요소(html, 뷰포트)영역을 기준으로 동작 */
+          width: 50%;
+          height: 50%;
+        ">
+        백분율
+      </div>
+    </div>
+  </div>
+</body>
+</html>

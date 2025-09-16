@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>b_unit.html</title>
+  <style>
+    /* 페이지 전체에 쓰일 변수 선언 */
+    :root {
+      --primary-color: red;
+      --secoundary-color: green;
+      --accent-color: blue;
+      --background-color: gray;
+    }
+
+    div {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+  ! 색상 단위 총정리 (Color Values)
+  - 키워드*
+    : 영문명 키워드를 사용 
+    EX) orange, purple, pink 등
+  
+    - HEX(16진수)*
+    : 0 ~ 9 (10개) + a ~ f (6개)
+    - #RGB / #RRGGBB / #RRGGBBAA 
+    >> 같은 색상의 값 2개가 같은 경우 축약 가능
+
+  - RGB/RGBA*
+    : rgb(r, g, b) / rgba(r, g, b, a)
+    >> r, g, b: 0부터 255까지 숫자 가능
+    >> a: 0부터 1까지 
+
+  - HSL
+  -->
+  <div style="width: 50px; height: 50px; background-color: #000000;"></div>
+  <div style="width: 50px; height: 50px; background-color: #000;"></div>
+
+  <!-- 4번째 자리 값: 투명도 (0 투명함 ~ f 불투명함) -->
+  <div style="width: 50px; height: 50px; background-color: #0007;"></div>
+
+  <div style="width: 50px; height: 50px; background-color: #333333;"></div>
+  <div style="width: 50px; height: 50px; background-color: #333;"></div>
+
+  <div style="width: 50px; height: 50px; background-color: #999999;"></div>
+  <div style="width: 50px; height: 50px; background-color: #999;"></div>
+
+  <div style="width: 50px; height: 50px; background-color: #eeeeee;"></div>
+  <div style="width: 50px; height: 50px; background-color: #eee;"></div>
+
+  <hr>
+
+  <div style="width: 50px; height: 50px; background-color: rgb(255, 255, 255);"></div>
+
+  <div style="width: 50px; height: 50px; background-color: rgb(255, 0, 0);"></div>
+  <div style="width: 50px; height: 50px; background-color: rgb(0, 255, 0);"></div>
+  <div style="width: 50px; height: 50px; background-color: rgb(0, 0, 255);"></div>
+
+  <div style="width: 50px; height: 50px; background-color: rgba(0, 255, 255, 0.5);"></div>
+  <div style="width: 50px; height: 50px; background-color: rgba(255, 0, 255, 0.5);"></div>
+
+  <!-- 
+  ! 이미지 단위 값
+  : url() 함수 사용
+  - 이미지 파일 경로를 따옴표로 감싸서 전달 (절대 경로/상대 경로)
+  - url('이미지 파일 경로')
+
+  ! 기타 함수
+    1) calc(): CSS 내에서 간단한 연산 수행
+      - 서로 다른 단위값에 대한 계산
+
+    2) var(): CSS 변수값 활용
+
+    cf) CSS 변수 선언 시 CSS 커스텀 속성(변수)은 반드시 --하이픈 두 개로 시작!!
+      >> -- 접두사 필수
+      >> var(--변수이름)
+
+      +) 두 개 이상의 단어 결합 시 - 하이픈 사용 권장 --main_color 도 가능
+
+      ! -- 두 개는 필요
+      ? 그 뒤의 이름은 알파벳/숫자/하이픈/언더스코어 등 조합 가능
+      ? 팀 컨벤션이 가장 중요!!!!!
+  -->
+  <div style="width: 100%; height: 100px; background-color: var(--primary-color);">
+    외부 DIV
+    <!-- 여백의 크기를 고정하는 경우! -->
+    <div style="width: calc(100% - 20px); background-color: var(--accent-color);">
+      내부 DIV
+    </div>
+  </div>
+</body>
+</html>
