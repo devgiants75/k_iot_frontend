@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position.html</title>
+  <style>
+    p {
+      width: 300px;
+      height: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    #p1 {
+      /* 기본값 (변화 X) */
+      position: static;
+
+      left: 100px;
+      top: -50px;
+    }
+
+    #p2 {
+      position: relative;
+
+      /* 위치값 변경 가능 */
+      left: 100px;
+      top: -50px;
+    }
+
+    #container {
+      position: relative;
+
+      width: 300px;
+      height: 300px;
+      background-color: lightblue;
+    }
+
+    #p3 {
+      /* 
+        상위 요소에서 relative 값을 절대적인 기준으로 배치
+
+        - 부모 요소가 relative가 아니라면
+          , 조상 요소 중 relative 값을 찾아 해당 요소를 기준으로 배치
+      */
+      position: absolute;
+
+      left: 100px;
+      top: -50px;
+
+      background-color: lightcoral;
+    }
+
+    #p4 {
+      position: fixed;
+
+      top: 30px;
+      right: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+  ! position (위치) 속성
+    : 요소의 위치를 결정하는 속성
+
+    ? 속성값
+      - static(정적인, '기본값')
+        : 기본 웹 문서의 흐름으로 배치 
+        : HTML 문서에 작성된대로 화면에 출력
+        - top, left, bottom, right 등 위치 조정 속성 적용 X
+
+      - relative(상대적인)
+        : static + 위치값 지정 (top, left, bottom, right 가능)
+
+      - absolute(절대적인)
+        : relative 값을 가진 '상위 요소'를 기준으로 위치값 지정
+
+      - fixed (고정적인)
+        : 브라우저 창을 기준으로 위치 배치
+        > 페이지 스크롤과 무관하게 브라우저를 기준으로 적용 (위치값 고정)
+  -->
+  <p id="p1">문단 요소입니다 01</p>
+  <p id="p2">문단 요소입니다 02</p>
+  <div id="container">
+    <p id="p3">문단 요소입니다 03</p>
+  </div>
+  <p id="p4">문단 요소입니다 04</p>
+</body>
+</html>
