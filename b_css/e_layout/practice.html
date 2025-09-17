@@ -4,11 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>practice.html</title>
+  <style>
+    section {
+      width: 800px;
+      /* 요소 중앙 정렬 */
+      margin: 0 auto;
+    }
 
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      line-height: 20px;
+      font-size: 12px;
+    }
+
+    /* 
+      시멘틱 요소: 요소의 배치를 의미있는 이름의 요소로 사용
+      > 블록 레벨 요소 (수직 배치)
+    */
+    article {
+      width: 350px;
+      height: 200px;
+
+      margin: 10px;
+      padding: 10px;
+
+      border: 1px solid #ccc;
+      /* 
+        부모의 너비 공간이 남을 경우 다음 요소가 배치
+        , 요소가 다 찰 경우 다음 줄로 이동
+      */
+      float: left;
+    }
+
+    /* 자식 선택자: footer 하위의 p만 적용 */
+    footer > p {
+      clear: left;
+
+      width: 800px;
+      height: 50px;
+
+      background-color: #222;
+      color: white;
+
+      text-align: center;
+      line-height: 50px;
+    }
+  </style>
 </head>
 <body>
   <!--  ! 문제 
     : 아래의 주어진 HTML 코드를 사진과 동일하게 변경
+
     ? article 요소
     - float 속성 사용
     - 너비(350), 높이(200)
