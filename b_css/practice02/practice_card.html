@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>practice_card.html</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .card {
+      width: 300px;
+      height: 400px;
+      background-color: white;
+      border-radius: 10px;
+      margin: 10px;
+
+      transition: all 0.3s ease-in-out;
+
+      /* 지정된 너비와 높이값 + radius를 제외한 영역을 숨김 처리 */
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .card-text {
+      font-size: 16px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <!-- div.card>img+div.card-content>h3.card-title+p.card-text -->
+  <div class="card">
+    <img src="../강아지이미지.jpg" alt="강아지 이미지">
+    <div class="card-content">
+      <h3 class="card-title">귀여운 강아지</h3>
+      <p class="card-text">웃는 강아지는 귀여워 :)</p>
+    </div>
+  </div>
+</body>
+</html>
