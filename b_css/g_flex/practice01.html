@@ -4,6 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>practice01.html</title>
+  <style>
+    /* flex 속성 */
+    #container {
+      border: 1px solid black;
+      width: 500px;
+      height: 200px;
+
+      /* 
+      - 정렬: 기본축(x축) 정렬 
+      - 위치: 왼쪽 상단 배치
+      */
+      display: flex;
+
+      /* 
+      주축 방향 가운데 정렬 
+      : justify-content
+      */
+      justify-content: center;
+      /* 
+      교차축 방향 가운데 정렬 
+      : align-items
+      */
+      align-items: center;
+    }
+
+    .box {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
 </head>
 <body>
   <div id="container">

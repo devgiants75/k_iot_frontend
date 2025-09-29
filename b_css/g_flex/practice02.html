@@ -4,6 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>practice02.html</title>
+  <style>
+    #container {
+      border: 1px solid black;
+      width: 500px;
+      height: 400px;
+
+      /* flex container 생성 */
+      display: flex;
+
+      /* 주축을 y축 방향으로 설정 */
+      flex-direction: column;
+
+      /* 주축(y축)에서 양 끝에 요소를 배치 */
+      justify-content: space-between;
+    }
+
+    .inner {
+      width: 100%;
+      height: 100px;
+
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .box {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+    }
+
+    /* 
+    #first {
+      background-color: lightblue;
+    }
+
+    #second {
+      background-color: lightcoral;
+    } 
+    */
+  </style>
 </head>
 <body>
   <div id="container">
