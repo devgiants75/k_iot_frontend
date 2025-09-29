@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex02.html</title>
+  <link rel="stylesheet" href="./flex02.css">
+</head>
+<body>
+  <!-- 
+  ! flex 속성 (약칭)
+    : flex 아이템이 flex 컨테이너 내에서 차지하는 공간의 비율을 결정
+
+    - 각 flex 아이템이 차지할 공간의 비율과 크기를 한 번에 지정하는 단축 속성
+
+    ? 모든 아이템에 동일하게 flex: 1; 지정 시
+      : 패딩과 여백의 기본 설정을 제외한 남은 공간을 모두 동일하게 분배받음
+  -->
+  <div class="container example1">
+    <div class="item flex-1">1</div>
+    <div class="item flex-2">2</div>
+    <div class="item flex-3">3</div>
+  </div>
+
+  <!-- 
+  ! flex 속성을 사용한 최소 크기 값 지정
+  : 지정 방식
+    ? flex: 비율 최소고정크기;
+
+    >> 최소 고정 크기까지 보장
+      + 남은 여백이 생길 경우 제공된 비율로 공간을 나눔
+      : 각 아이템이 최소 고정 크기를 가질 때 까지는 1:1:1 비율
+  -->
+  <div class="container example2">
+    <div class="item flex-1">1</div>
+    <div class="item flex-2">2</div>
+    <div class="item flex-3">3</div>
+  </div>
+
+  <!-- 
+  ! flex 속성의 세부 구성 요소
+  : flex 단축 속성의 구성 (3가지)
+
+  1) flex-grow
+    : 컨테이너 내에 남은 공간을 어떻게 채울지 결정
+      (단위가 없는 비례값, 기본값 0)
+      - 숫자가 클수록 더 많은 추가 공간을 차지
+
+  2) flex-shrink
+    : 컨테이너가 축소될 때 flex 아이템을 어떻게 줄일지 결정
+      (단위가 없는 비례값, 기본값 1)
+      - 아이템 공간에 맞춰 축소
+
+  3) flex-basis
+    : flex 아이템의 초기 크기 설정
+      (정식 단위값을 사용하여 지정, 추가 공간 분배 이전의 크기를 결정)
+
+  >> flex: grow shrink basis
+  -->
+  <h2>grow(자라나다)</h2>
+  <div class="container example3">
+    <div class="item grow-1">1</div>
+    <div class="item grow-2">2</div>
+    <div class="item grow-3">3</div>
+  </div>
+  
+  <h2>shrink(축소하다) & basis(기초, 기본)</h2>
+  <div class="container example4">
+    <div class="item grow-1">1</div>
+    <div class="item grow-2">2</div>
+    <div class="item grow-3">3</div>
+  </div>
+</body>
+</html>

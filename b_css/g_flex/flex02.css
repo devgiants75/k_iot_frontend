@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  margin: 10px auto;
+  padding: 10px;
+
+  width: 80%;
+  border: 1px solid #ccc;
+  flex-wrap: nowrap;
+}
+
+.item {
+  background-color: #ffcccb;
+  padding: 20px;
+  margin: 5px;
+  border: 1px solid #000;
+
+  /* 최소 너비 */
+  min-width: 50px;
+  text-align: center;
+}
+
+.example1 .flex-1 {
+  /* 패딩과 여백이 지정된 후 남은 여분의 공간을 모두 동등한 크기로 점유 */
+  flex: 1;
+}
+
+.example1 .flex-2 {
+  flex: 2;
+}
+
+.example1 .flex-3 {
+  flex: 1;
+}
+
+/* 
+  전체 공간을 1 + 2 + 1 (== 4)로 두고 각 요소를 1 : 2 : 1로 차지
+*/
+.example2 .flex-1 {
+  flex: 1 200px;
+}
+.example2 .flex-2 {
+  flex: 2 200px;
+}
+.example2 .flex-3 {
+  flex: 1 200px;
+}
+
+/* 
+  flex 속성: grow + shrink + basis
+*/
+
+.example3 .grow-1 {
+  /* grow 속성: 늘어나는 비율을 지정 */
+
+  /* 나머지 item에 속성 지정하지 않을 경우 남은 공간을 모두 차지 */
+  flex-grow: 1;
+}
+.example3 .grow-2 {
+  flex-grow: 2;
+}
+.example3 .grow-3 {
+  flex-grow: 3;
+}
+
+.example4 .grow-1 {
+  /* 
+    shrink: 줄어드는 속도를 지정
+    basis: 아이템의 기본 크기 
+  */
+  flex-basis: 100px;
+  flex-shrink: 3;
+}
+.example4 .grow-2 {
+  flex-basis: 200px;
+  flex-shrink: 3;
+}
+.example4 .grow-3 {
+  flex-basis: 300px;
+  flex-shrink: 1;
+}

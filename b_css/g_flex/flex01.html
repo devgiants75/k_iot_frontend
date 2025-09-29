@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex01.html</title>
+  <!-- HTML 웹 문서와 CSS 스타일 코드 연결 -->
+  <link rel="stylesheet" href="./flex01.css">
+</head>
+<body>
+  <!-- Live Server: alt + l + o -->
+
+  <!-- 
+  ! Flexbox 
+    : 1차원(가로 또는 세로) 배치에 최적화
+    - 정렬, 간격 분배, 순서 변경, 줄바꿈 등을 선언(문법)적으로 해결 
+
+  ? Grid
+    : 2차원(표, 행과 열) 레이아웃에 최적화
+    - Flex 상호보완
+
+  == Flexbox VS Grid ==
+  - Grid: 웹 페이지 전체 구조와 같은 레이아웃 구성
+  - Flexbox: 내부 구조 정렬, 순서 배치, 간격 분배를 구현
+
+  >> Grid로 웹 사이트의 전체적인 구조 작성 후 
+      Flexbox로 각 섹션 내부 아이템 배치 처리
+
+  cf) 기존 레이아웃 기법
+    1) Block/Inline
+      : 한 축으로만 배치(Block: 세로 / Inline: 가로)
+      - 복잡한 정렬과 균등 간격 분배가 어려움
+    2) Float
+      : 본래 텍스트 회피 용도
+      - 컬럼 레이아웃에 주로 사용
+      - 정렬, 균등 간격 분배가 어려움
+    3) Position
+      : 절대/상대 배치
+      - 레이아웃 전체에 쓰면 반응형, 유지보수성 낮아짐
+  
+  ! 1. Flexbox 핵심 용어 (주요 구조)
+
+  == 1) Flex Container(컨테이너) ==
+    : Flexbox 레이아웃의 테두리
+    - Flex 컨테이너 내의 모든 "직접 자식 요소"는 Flex 아이템(Item)
+      > 직접 자식 요소가 아닌 경우 Flex 설정 불가!
+      EX) a요소 > b 요소 > d, e 요소
+        a 요소를 Flex 컨테이너 지정 시 b 요소가 Flex 아이템
+        b 요소를 Flex 컨테이너 지정 시 d, e 요소가 Flex 아이템
+
+    ? display: flex (Flex Container를 만드는 속성)
+
+    cf) Flex Item을 만드는 속성은 따로 X
+
+  == 2) 기본 축 (Main Axis) ==
+  : Flex Item이 배치되는 방향으로 진행하는 축
+  - 기본값: 가로 정렬 (행 방향, x축)
+  - main start ~ main end
+
+  == 3) 교차 축 (Across Axis) ==
+  : Flex Item이 배치되는 방향에 직각을 이루는 축
+  - 기본값: 세로 정렬 (열 방향, y축)
+  - across start ~ across end
+
+  ? display: flex; 설정의 컨테이너는 자동으로 기본 축이 가로, 교차 축이 세로
+
+  ? "Flex 컨테이너"에 지정하는 속성
+    1) flex-direction 속성
+      : flexbox의 기본 축이 진행되는 방향을 지정
+        > Flex Item이 배치되는 방향
+
+      속성값
+      - row(행, 기본값 - 가로)
+      - column(열, 세로)
+      - row-reverse(행의 역방향 정렬)
+      - column-reverse(열의 역방향 정렬)
+
+    2) flex-wrap 속성
+      : flex 아이템들이 여러 줄로 래핑될 것인지를 결정
+      - 아이템이 메인 축을 기준으로 한 줄에 모두 배치되지 못할 경우, 여러 줄로 배치될 것인지 결정
+
+      속성값
+      - nowrap(기본값): 모든 Flex 아이템을 주축 기준 한 줄에 배치
+      - wrap: 컨테이너를 벗어나는 아이템은 여러 줄로 래핑
+      - wrap-reverse: wrap 유사 + 아이템들의 순서가 반대로 래핑
+
+    3) flex-flow 속성
+      : flex-direction + flex-wrap을 하나의 단축 속성으로 지정
+
+      ? flex-flow: direction속성 wrap속성;
+  -->
+  <h1>Flexbox 예시 자료</h1>
+  <section>
+    <h2>1. 기본 Flex 구조 만들기</h2>
+    <!-- div.container>(div.item)*3 -->
+    <div class="container example1">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+
+    <h2>2. Flex Direction(주축/교차축 변경)</h2>
+    <div class="container example2">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+
+    <h2>3. Flex Wrap(아이템 래핑)</h2>
+    <div class="container example3">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+    </div>
+
+    <h2>4. Flex Flow(아이템 정렬 & 래핑)</h2>
+    <div class="container example4">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+    </div>
+  </section>
+</body>
+</html>

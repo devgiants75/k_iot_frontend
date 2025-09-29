@@ -1,0 +1,53 @@
+/* class 속성: .속성명 */
+.container {
+  /* 
+    div의 블록 레벨 요소 정렬이 
+    flex 컨테이너화 되어 메인축을 기준으로 정렬  
+  */
+  display: flex;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 80%;
+}
+
+.item {
+  /* Flex Item: 메인축(x축)을 기준으로 정렬 */
+  background-color: lightcoral;
+  padding: 20px;
+  margin: 5px;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.example1 {
+  /* 기본 설정: 행 방향 */
+  flex-direction: row;
+}
+
+.example2 {
+  /* 메인축: 열, 세로방향 */
+  flex-direction: column;
+
+/* 
+  flex-direction: row-reverse;
+  flex-direction: column-reverse; 
+*/
+}
+
+.example3 {
+  flex-wrap: nowrap;
+
+  /* 시작점을 기준으로 아래로 감싸는 형태 */
+  flex-wrap: wrap;
+
+  /* 마지막 요소를 시작으로 설정하여 나머지를 감싸는 형태 */
+  flex-wrap: wrap-reverse;
+}
+
+.example4 {
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+
+  flex-flow: row-reverse wrap;
+}
