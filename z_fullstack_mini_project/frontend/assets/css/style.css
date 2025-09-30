@@ -205,11 +205,148 @@ code {
 .section.muted { background: rgba(255, 255, 255, 0.03); }
 .section-title { font-size: 20px; margin: 0 0 16px; }
 
+/* TECH STACK */
+.tech-stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.tech-stack-list li {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
 /* PROJECT */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card {
+  /* calc() 함수: 서로 다른 크기값에 대한 연산 */
+  flex: 1 1 calc(25% - 12px);
+  /* flex-wrap 활용을 위한 최소 너비 고정 */
+  min-width: 240px;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.card h4 { margin: 0 0 10px; }
+.card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
 
 /* EXPERINECE */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline li {
+  margin-bottom: 14px;
+  padding-left: 30px;
+  position: relative;
+  color: var(--text);
+}
+
+/* 
+! CSS 가상 요소
+  : 선택한 요소의 내용(content)의 앞부분에 새로운 가상의 요소를 추가할 때 사용
+  - HTML 태그에 내용 추가없이, CSS만으로 추가적인 장식/콘텐츠 삽입 가능
+  - 반드시 content 속성을 함께 사용 
+
+  1) ::before (요소 앞)
+  2) ::after (요소 뒤)
+  3) ::first-line (문단의 첫 번째 줄에만 적용)
+  4) ::first-letter (문단의 첫 글자에만 적용)
+*/
+.timeline li::before {
+  content: "👉";
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+}
 
 /* CONTACT */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.contact-left { flex: 1 1 420px; }
+.contact-right { flex: 1 1 320px; }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form input, .form textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.15);
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: 2px solid rgba(79, 70, 229, 0.5);
+  border-color: transparent;
+}
+
+.info-banner {
+  padding: 16px;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.2s;
+}
+
+.social-item:hover {
+  background: rgba(79, 70, 229, 0.15);
+}
+
+.social-item img {
+  width: 20px;
+  height: 20px;
+}
 
 /* FOOTER */
 .site-footer {
