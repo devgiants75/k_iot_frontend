@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FULLSTACK 미니 프로젝트</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <!-- 
+  [ 프로젝트 개요 ]
+  1. 프론트엔드: 웹 표준 기술(HTML + CSS + JS) 기반
+  2. 백엔드: Spring Boot 프레임워크 활용
+  3. 아키텍쳐: 클라이언트-서버 구조 (RESTful API 방식으로 통신)
+
+  >> 웹 표준 기술을 사용한 사용자 인터페이스 구성과 
+    Spring Boot로 API 서버를 구축하여 데이터를 주고받는 
+    풀스택 웹 애플리케이션 구조
+  -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">LSA<span>PortFolio</span></h1>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#tech-stacks">기술 스택</a></li>
+          <li><a href="#projects">프로젝트</a></li>
+          <li><a href="#experiences">경험</a></li>
+          <li><a href="#contacts">연락/링크</a></li>
+        </ul>
+      </nav>
+      <!-- 
+      aria-label: 시각적인 텍스트 레이블이 없는 요소의 접근성 향상 속성 
+      -->
+      <button class="btn primary" id="loginBtn" aria-label="로그인 버튼">로그인</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 
+      ! hero 클래스명
+      : 웹 사이트의 주요 배너나 광고의 핵심적인 부분을 지칭하는 용어
+      - 웹 디자인 용어
+    -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h2>문제를 풀어내는 풀스택 개발자, 이승아</h2>
+          <p>사용자 가치와 성능을 우선으로, 기획-디자인-백엔드-프론트 전체를 아우르는 협업을 지향합니다. 공동의 목표를 향해 성장하며 의미 있는 성과를 만들어가고 싶습니다.</p>
+
+          <!-- 
+            ! ctas 클래스명
+            : Call To Action 버튼이나 UI 요소의 스타일을 정의
+            - cta-primary(주요 버튼), cta-secondary(보조 버튼)
+
+            >> 사용자에게 특정 행동(가입, 결제, 다운로드 등)을 유도하는 UI 요소에 주로 사용
+          -->
+          <div class="hero-ctas">
+            <a href="#tech-stacks" class="btn primary">기술 스택 보기</a>
+            <a href="#projects" class="btn outline">프로젝트 보기</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <!-- 
+          ★ JS로 추후 동적 컴포넌트 렌더링 예정 ★ 
+          : 포트폴리오 썸네일/데모 GIF 영역 
+          -->
+          <div class="mock-data" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech-stacks" class="section">
+      <div class="container">
+        <h3 class="section-title">기술 스택</h3>
+        <!-- ★ 기술 스택은 향후 /api/public/skills 등으로 교체 가능 ★ -->
+        <ul class="tech-stack-list">
+          <li>프론트엔드: <code>React</code>, <code>TypeScript</code>, 상태관리, 접근성, 성능 최적화</li>
+          <li>백엔드: <code>Spring Boot</code>, REST API, 보안/JWT, RDB 설계</li>
+          <li>빌드/배포: CI/CD, 컨테이너, 정적 호스팅, 모니터링</li>
+          <li>협업: 테스트/리뷰 문화 정착, Swagger API, 사용자 중심 문제정의</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h3 class="section-title">프로젝트</h3>
+        <!-- ★ 아래 카드는 데모용. 실제로는 /api/projects 결과로 동적 렌더링 가능 -->
+        <div class="card-grid">
+          <!-- article.card*4>h4+p+button.btn -->
+          <article class="card">
+            <h4>프로젝트 1</h4>
+            <p>할 일 관리를 위한 풀스택 프로젝트</p>
+            <button class="btn small">데모 보기</button>
+          </article>
+          <article class="card">
+            <h4>프로젝트 2</h4>
+            <p>포트폴리오 풀스택 프로젝트</p>
+            <button class="btn small">데모 보기</button>
+          </article>
+          <article class="card">
+            <h4>프로젝트 3</h4>
+            <p>상품/장바구니/결제 흐름을 구현한 토이 프로젝트</p>
+            <button class="btn small">데모 보기</button>
+          </article>
+          <article class="card">
+            <h4>프로젝트 4</h4>
+            <p>팀 프로젝트</p>
+            <button class="btn small">데모 보기</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiences" class="section">
+      <div class="container">
+        <h3 class="section-title">교육 이수 / 직무 경험</h3>
+        <ul class="timeline">
+          <li><strong>2024.06 - 2025.02</strong> | 클라우드 SaaS기반 시니어케어 ERP 개발</li>
+          <li><strong>2025.02 - 2025.08</strong> | 사물인터넷(IoT) 기반 웹 솔루션 개발</li>
+        </ul>
+      </div>
+    </section>
+    
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div class="contact-left">
+          <h3 class="section-title">문의</h3>
+          <p>협업 제안, 프로젝트 의뢰, 커리어 상담 모두 환영합니다. 가능한 한 빠르게 답변드리겠습니다.</p>
+          <form id="contact-form" class="form">
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email" placeholder="your-email@example.com" required />
+
+            <label for="message">메시지</label>
+            <textarea name="message" id="message" rows="4" placeholder="프로젝트 범위/일정/예산을 간략히 적어주세요."></textarea>
+
+            <button type="submit" class="btn primary">보내기</button>
+          </form>
+        </div>
+        <div class="contact-right">
+          <!-- ★ 로그인 상태/프로필 또는 안내 배너 동적 표기 가능 ★ -->
+          <div class="info-banner">
+            <strong>Tip</strong>: 이력서(PDF)와 GitHub, 데모 링크는 상단 버튼 및 프로젝트 카드에서 확인하실 수 있습니다 :)
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span>2025</span> LEE SEUNG AH. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">개인정보처리방침</a>
+        <a href="#">이용약관</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

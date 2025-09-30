@@ -1,0 +1,214 @@
+/* 
+====== Global Styles ======
+- 폰트, 색상, 레이아웃 기본값 설계
+- Flex 기반 반응형 레이아웃
+*/
+:root {
+  /* == 배경색 지정(Background) == */
+  --bg: #0f172a;
+  --bg-muted: #111827;
+  --card: #111827;
+  
+  /* == 글자색 지정(Text) == */
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+
+  /* == 주요 & 강조 색상 지정(Primary & Accent Colors) == */
+  --primary: #4f46e5;
+  --primary-contrast: #ffffff;
+  --accent: #22c55e;
+
+  /* == 상태 색상 (Status Colors) == */
+  --danger: #dc2626;
+
+  /* 테두리 & 그림자 색상 (Borders & Shadows) */
+  --outline: #374151;
+  --shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+  /* 레이아웃 (Layouts) */
+  --radius: 16px;
+  --container: 1120px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  color: var(--text);
+  background: linear-gradient(180deg, #0b1023 0%, #0f172a 60%);
+}
+a {
+  /* inherit: 부모 요소의 값을 상속 */
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  /* 
+  cf) img: inline-block이 기본값
+    - 요소가 가로 배치 되면서 너비, 높이값 지정 가능 
+  */
+  display: block;
+}
+code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.1rem 0.4rem;
+  border-radius: 6px;
+}
+
+.container {
+  max-width: var(--container);
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  backdrop-filter: blur(8px);
+  background: rgba(17, 24, 39, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.header-inner {
+  display: flex;
+  /* 교차축 방향 정렬 (기본값 stretch) */
+  align-items: center;
+  justify-content: space-between;
+  /* flex item들의 사이 간격(행/열 간격) 지정 */
+  gap: 16px;
+  min-height: 64px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-list {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list a {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.nav-list a:hover, .nav-list a:focus {
+  color: var(--text);
+}
+
+/* BUTTON */
+.btn {
+  /* 
+    ! inline-flex VS flex
+    : 둘 다 자식 요소를 Flexbox 규칙으로 배치 가능
+      - 자식 배치는 동일하게 적용
+
+    1) flex
+      : 컨테이너 자체가 블록 레벨 요소 (가로 100 차지)
+
+    2) inline-flex
+      : 컨테이너 자체가 인라인 요소처럼 동작 (내용 크기만큼만 차지)
+  */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--outline);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: 
+    transform .1s ease, 
+    background .2s ease, 
+    border-color .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn.small {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+.btn.primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-contrast);
+}
+.btn.primary:hover {
+  filter: brightness(1.05);
+}
+.btn.outline {
+  background: transparent;
+}
+
+/* MAIN */
+/* 1. SECTION (HERO) */
+.hero {
+  /* box 모델 속성값이 3개인 경우: 위 좌우 하 */
+  padding: 48px 0 16px;
+}
+
+.hero-inner {
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  flex: 1 1 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero-right {
+  flex: 1 1 320px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mock-data {
+  width: 100%;
+  height: 220px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(79,70,229,0.25), rgba(24,197,94,0.25));
+  box-shadow: var(--shadow);
+}
+
+
+
+
+
+
+/* FOOTER */
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px 0;
+  margin-top: 32px;
+  background: rgba(0, 0, 0, 0.2);
+}
