@@ -200,10 +200,16 @@ code {
   box-shadow: var(--shadow);
 }
 
+/* SECTION */
+.section { padding: 48px 0; }
+.section.muted { background: rgba(255, 255, 255, 0.03); }
+.section-title { font-size: 20px; margin: 0 0 16px; }
 
+/* PROJECT */
 
+/* EXPERINECE */
 
-
+/* CONTACT */
 
 /* FOOTER */
 .site-footer {
