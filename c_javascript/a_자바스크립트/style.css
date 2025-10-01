@@ -1,0 +1,21 @@
+/* style.css */
+/* 외부 스타일 시트 */
+button {
+  background-color: #ccc;
+  font-size: 20px;
+  font-weight: bold;
+
+  /* 내용과 테두리 사이의 공백: padding(패딩) */
+  padding: 20px;
+
+  /* 서로 다른 요소들 사이의 공백: margin(마진) */
+  margin: 20px;
+
+  /* 요소의 테두리: border(보더) */
+  border: 1px solid black;
+
+  /* 요소의 테두리를 곡선화: border-radius */
+  border-radius: 5px;
+
+  text-transform: uppercase;
+}
