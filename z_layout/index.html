@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹앱 기본 레이아웃 구성</title>
+  <link rel="stylesheet" href="./flex-style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- 상단 헤더 -->
+    <header class="header">헤더</header>
+
+    <!-- 본문: 좌측 사이드바 + 우측 메인 -->
+    <div class="body">
+      <aside class="sidebar">사이드바</aside>
+
+      <main class="main">
+        <div class="tabs">탭 영역</div>
+        <section class="request-panel">요청 패널</section>
+        <section class="response-panel">응답 패널</section>
+      </main>
+    </div>
+
+    <!-- 하단 상태바 -->
+    <footer class="footer">하단 바</footer>
+  </div>
+</body>
+</html>

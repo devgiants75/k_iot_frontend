@@ -1,0 +1,76 @@
+/* 기본 리셋 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+
+/* 앱 전체 - 세로로 헤더/본문/푸터 */
+.app{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border: 4px solid red;               /* 바깥 큰 빨간 틀 */
+}
+
+/* 헤더 (상단 바) */
+.header{
+  flex: 0 0 56px;                      /* 고정 높이 */
+  display: flex; 
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 2px solid red;        /* 내부 구분선 */
+}
+
+/* 본문: 좌측 사이드바 | 우측 메인 (가로 배치) */
+.body{
+  flex: 1 1 auto;
+  display: flex;                       /* 가로 */
+  min-height: 0;                       /* 내부 스크롤 계산 정확히 */
+}
+
+/* 사이드바 (좌) */
+.sidebar{
+  flex: 0 0 260px;                     /* 고정 폭 (사진 느낌) */
+  border-right: 2px solid red;
+  padding: 16px;
+  overflow: auto;
+}
+
+/* 메인 (우) : 탭/요청/응답을 위→아래로 */
+.main{
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;                        /* 내용 넘침 방지 */
+  border-left: 0;                       /* 외형 유지용 (선은 tabs/request에서 처리) */
+}
+
+/* 탭 바 (우측 상단) */
+.tabs{
+  flex: 0 0 40px;
+  display: flex; align-items: center;
+  padding: 0 8px;
+  border-bottom: 2px solid red;
+}
+
+/* 요청/응답 영역을 세로로 분할 */
+.request-panel{
+  flex: 0 0 45%;                       /* 위쪽 비율(조정 가능) */
+  padding: 16px;
+  border-bottom: 2px solid red;
+  overflow: auto;
+}
+
+.response-panel{
+  flex: 1 1 auto;                      /* 나머지 */
+  padding: 16px;
+  overflow: auto;
+}
+
+/* 하단 상태바 */
+.footer{
+  flex: 0 0 28px;
+  display: flex; 
+  align-items: center;
+  padding: 0 12px;
+  border-top: 2px solid red;
+}
