@@ -41,8 +41,38 @@ console.log(filterTen([3, 2, 5, 1, -10, 5, 6])); // []
 //! 3. 배열의 평균 구하기
 // - findAverage(array)
 // : 평균 == 전체 요소의 합 / 요소의 개수
+function findAverage(array) {
+  let sum = 0;
+  let length = array.length;
+
+  for (let i = 0; i < length; i++) {
+    sum += array[i];
+  }
+
+  // let average = sum / length;
+  // return average;
+  return sum / length;
+}
 
 //! 4. 배열 내의 최대값 찾기
 // - findMax(array)
 // : 배열의 첫 번째 요소를 max라는 변수에 담기
 // : 배열을 순회하면서 max보다 큰 값이 있을 경우 max를 해당 값으로 재할당
+function findMax(array) {
+  let max = array[0];
+
+  let length = array.length;
+
+  for (let i = 1; i < length; i++) {
+    // 첫 번째 요소는 이미 max 변수에 할당 
+    // > 두 번째 요소부터 순회
+    if (array[i] > max) {
+      max = array[i]; // 재할당
+    }
+  }
+
+  return max;
+}
+
+console.log(findAverage([1, 2, 3, 4, 5])); // 3
+console.log(findMax([1, 2, 5, 4, 3])); // 5
