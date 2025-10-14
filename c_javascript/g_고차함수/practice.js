@@ -14,7 +14,7 @@ function passingScores(scores) {
   const passing = scores.filter(score => score >= 60);
 
   // 2) 60점 이상인 점수의 개수: .length
-  const passingCount = scores.length;
+  const passingCount = passing.length;
 
   // 3) 60점 이상인 점수들의 평균: 합을 단일한 값으로 반환 - reduce
   const passingAverage 
@@ -26,7 +26,7 @@ function passingScores(scores) {
 
 //? 함수 호출
 const result = passingScores(scores);
-console.log(result); // [ 7, 59.57142857142857 ]
+console.log(result); // [ 7, 83.4 ]
 
 // const passingCountValue = result[0];
 // const passingAverageValue = result[1];
@@ -43,7 +43,7 @@ console.log(`${aa}, ${bb}, ${cc}`); // 1, 2, 3
 const [passingCountValue, passingAverageValue] = result;
 
 console.log(passingCountValue); // 7
-console.log(passingAverageValue); // 59.57142857142857
+console.log(passingAverageValue); // 83.4
 
 // +) 구조 분해 할당은 변수 선언 + 초기화 
 
