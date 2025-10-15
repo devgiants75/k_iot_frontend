@@ -245,3 +245,25 @@ busanLibrary.updateBook(2, 'Java study is fun', 'lee do kyeong');
 
 busanLibrary.removeBook(3);
 busanLibrary.displayBook();
+
+// == 부산 도서관 ==
+const yangsanLibrary = new Library();
+
+yangsanLibrary.addBook('자바스크립트 공부는 재밌어', '이승아');
+yangsanLibrary.addBook('자바 공부는 재밌어', '이도경');
+yangsanLibrary.addBook('SQLD 공부는 재밌어', '이지희');
+yangsanLibrary.addBook('타입스크립트 공부는 재밌어', '이지훈');
+yangsanLibrary.addBook('리액트 공부는 재밌어', '이승아');
+
+yangsanLibrary.displayBook();
+
+yangsanLibrary.filterBooksByAuthor('이승아');
+
+yangsanLibrary.filterBooksByTitle('스크립트');
+
+yangsanLibrary.rentBook(1);
+yangsanLibrary.rentBook(3);
+yangsanLibrary.filterBooksByAvailable(true);
+yangsanLibrary.filterBooksByAvailable(false);
+
+yangsanLibrary.countAvailableBooks(); // 총 3권의 책이 대여 가능합니다.
