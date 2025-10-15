@@ -31,6 +31,7 @@ let todo =  {
 
 //! == 프로젝트 구현 == //
 let todos = []; // 배열 리터럴 방식 선언 (빈 배열) - 할 일 목록을 저장할 배열 초기화
+let wastebasket = []; // 휴지통 (삭제된 할 일 저장소)
 let nextId = 1; // 고유 ID값을 위한 전역 변수
 
 // 1) 할 일 추가 함수
@@ -104,10 +105,23 @@ function toggleTodo(id) {
 // : 삭제하고자 하는 id를 가진 할 일을 todos 배열에서 제거
 // >> 배열 내부 요소에서 제거 (요소 개수 변화 O: filter)
 function deleteTodo(id) {
+  const idx = todos.findIndex(todo => todo.id === id); // 삭제할 요소의 인덱스 번호를 반환
+  if (idx === -1) {
+    console.log(`id ${id}는 없습니다.`);
+    return; // 함수 종료
+  }
+
+  // splice(시작 인덱스, 삭제할 요소의 개수, 추가할 요소): 제거/추가 가능
+  // 1) 제거(시작 인덱스, 삭제할 요소의 개수);      >> 제거된 요소가 배열로 반환
+  // 2) 추가(시작 인덱스, 0, 추가할 요소 나열);
+  const [removed] = todos.splice(idx, 1); //! 구조 분해 할당 - removed 상수 사용 가능
+  wastebasket.push(removed);
+
   // 1, 2, 3, 4, 5 중에서 4를 제거
   // === 4와 일치하지 않는 1, 2, 3, 5만을 새로운 배열로 저장
   // >> 4가 삭제된 효과
   todos = todos.filter(todo => todo.id !== id);
+
   displayTodo();
 }
 
@@ -120,9 +134,28 @@ function displayTodo() {
 
     // 논리 연산자
     // : 완료 시 ✔️ 기호를 출력
-    console.log(`${todo.id}: ${todo.content} - ${todo.completed && '✔️'}`);
+    // console.log(`${todo.id}: ${todo.content} - ${todo.completed && '✔️'}`);
     // completed(true - 완료됨): 체크 출력!
   })
+}
+
+// +) 할 일 복구/비우기 기능 함수
+function restoreTodo(id) {
+  const idx = wastebasket.findIndex(waste => waste.id === id);
+
+  if (idx === -1) {
+    console.log(`휴지통에 id ${id}가 없어요`);
+    return;
+  }
+
+  const [restored] = wastebasket.splice(idx, 1);
+  todos.push(restored);
+  displayTodo();
+}
+
+// +) 휴지통 비우기
+function emptyWastebasktet() {
+  wastebasket.length = 0; // 휴지통 비우기 - 길이값 초기화
 }
 
 //! == 프로젝트 실행 ==
@@ -140,3 +173,11 @@ deleteTodo(1);
 addTodo('자격증 공부하기!');
 
 toggleTodo(5);
+
+restoreTodo(1);
+
+toggleTodo(1);
+
+emptyWastebasktet();
+
+restoreTodo(3);
