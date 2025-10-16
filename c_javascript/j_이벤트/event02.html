@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event02.html</title>
+  <style>
+    .colorDiv {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      background-color: #f0f0f0;
+
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid black;
+    }
+
+    #container {
+      width: 200px;
+      height: 200px;
+      background-color: #f9f9f9;
+      border: 1px solid black;
+    }
+
+    .inner {
+      width: 80px;
+      height: 80px;
+      background-color: white;
+      border: 1px solid black;
+      margin: 5px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h2>이벤트 객체</h2>
+  <button id="colorChangeButton">색상 변경</button>
+
+  <br />
+
+  <div id="colorDiv1" class="colorDiv"></div>
+  <div id="colorDiv2" class="colorDiv"></div>
+  <div id="colorDiv3" class="colorDiv"></div>
+  <div id="colorDiv4" class="colorDiv"></div>
+
+  <!-- div#container>div.inner*2 -->
+  <div id="container">
+    <button class="inner"></button>
+    <button class="inner"></button>
+  </div>
+  
+  <script src="./event02.js"></script>
+</body>
+</html>
