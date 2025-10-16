@@ -49,6 +49,32 @@
     <button class="inner"></button>
     <button class="inner"></button>
   </div>
+
+  <h2>기본 행동 방지하기</h2>
+  <form>
+    <!-- (div>label+input#id)*3 -->
+    <div>
+      <label for="name">Name: </label>
+      <input type="text" id="name" placeholder="이름을 입력해주세요." value="홍길동">
+    </div>
+    <div>
+      <label for="email">Email: </label>
+      <input type="text" id="email" placeholder="이메일을 입력해주세요.">
+    </div>
+    <div>
+      <!-- type이 submit인 input 또는 button 클릭 시 submit 이벤트 발생 -->
+      <input type="submit">
+    </div>
+  </form>
+  <p></p>
+
+  <h2>이벤트 전파 방지하기</h2>
+  <div 
+    id="parentDiv"
+    style="border: 5px solid lightblue; padding: 10px;"
+  >
+    <button id="childButton">자식 요소 버튼</button>
+  </div>
   
   <script src="./event02.js"></script>
 </body>

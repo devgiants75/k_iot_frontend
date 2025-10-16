@@ -75,3 +75,61 @@ container.addEventListener('click', (event) => {
 
   console.log('이벤트 유형 (type): ' + event.type);
 });
+
+//! 이벤트의 기본 행동 방지
+// : form 태그는 submit 버튼 실행 시
+//    , 내부의 데이터가 서버에 전송 + 페이지가 리로드(새로고침)
+// >> preventDefault();
+
+const form = document.querySelector('form');
+const fname = document.querySelector('#name');
+const femail = document.querySelector('#email');
+const p = document.querySelector('p');
+
+form.onsubmit = (e) => {
+  // 이름과 이메일을 반드시 작성하도록 설정!
+  // : 참조된 요소의 값(내용) 가져오기
+
+  //? input 요소의 내용값 삽입
+  // - placeholder: 힌트 삽입 (활성화 시 사라짐)
+  // >> 참조값(요소값).value속성
+
+  if (fname.value === '' || femail.value === '') {
+    // 제출 입력값에 대한 유효성 검증이 모두 이루어지지 않은 경우
+    // >> 제출 이벤트에 대한 행동 방지
+    e.preventDefault();
+
+    p.textContent = '이름과 이메일은 필수 입력값입니다.'
+    p.style.color = 'red';
+  }
+}
+
+//! 이벤트 전파 방지
+// : e.stopPropagation();
+
+// '이벤트 전파'
+// : 자식 요소에서 발생한 이벤트가 부모 요소로 전달(이벤트 버블링)
+//      - 자식 > 부모 > 조상 > document 순으로 올라감!
+
+// +) 이벤트 캡쳐링
+// : 최상위 객체(window or document)에서 이벤트 발생 요소(타깃)로 내려가는 단계
+// > addEventListener의 세 번째 인자를 true로 주어야, 캡쳐링 단계에서 이벤트 감지 가능 (기본값: false - 버블링)
+
+let parent = document.querySelector('#parentDiv');
+let child = document.querySelector('#childButton');
+
+// parent.addEventListener('click', () => {
+//   console.log('부모 요소 클릭');
+// }, true);
+
+parent.addEventListener('click', () => {
+  console.log('부모 요소 클릭');
+});
+
+child.addEventListener('click', (e) => {
+  console.log('자식 요소 클릭');
+
+  // 이벤트 버블링은 자식 > 부모로 진행
+  // : 자식요소이벤트객체.stopPropagation()을 사용하여 이벤트 전파 중지
+  e.stopPropagation();
+});
