@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index.html</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- div#app>h1+form#new-todo-form+ul#todo-list -->
+  <div id="app">
+    <h1>할 일 목록</h1>
+    <form action="" id="new-todo-form">
+      <!-- 
+        bool속성: 속성명 명시O(true) / 명시X(false) 
+        
+        cf) 속성명 명시하지 않을 경우: required="false"
+
+        EX) required, checked, autofocus 등
+      -->
+      <input 
+        type="text" 
+        id="new-todo"
+        placeholder="새로운 할 일을 입력하세요."
+        required
+      />
+      <button type="submit">추가</button>
+    </form>
+    <ul id="todo-list">
+      <!-- 
+        <li class="completed">
+          첫 번째 할 일 
+          <button class="delete-button">X</button>
+        </li>
+        <li>
+          두 번째 할 일 
+          <button class="delete-button">X</button>
+        </li> 
+      -->
+    </ul>
+  </div>
+  
+  <!-- 
+  HTML에 연결되는 JS 파일에 모듈 시스템 적용: type="module" 속성 사용 
+  -->
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
