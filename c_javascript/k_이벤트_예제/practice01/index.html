@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index.html</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h1>간단한 투두 리스트 만들기 (이벤트 예제)</h1>
+
+  <!-- 
+    1) 사용자로부터 할 일을 '입력' 받고 
+    2) 추가 버튼을 '클릭'하면  
+    3) ul-li 태그에 할 일의 내용을 동적으로 생성하여 출력
+
+    >> 입력: input 태그
+    >> 클릭: button 태그
+    >> 내용 출력: ul-li 태그
+  -->
+  <!-- div#todo-app -->
+  <div id="todo-app">
+    <input type="text" id="todo-input" placeholder="할 일을 입력해주세요." />
+    <button id="add-button">추가</button>
+    <ul id="todo-list">
+      <!-- 리스트 아이템(li)은 JS로 동적 생성 -->
+    </ul>
+  </div>
+
+  <hr />
+
+  <p id="para"></p>
+  <input type="text" id="word-input" />
+  
+  <script src="./main.js"></script>
+</body>
+</html>
