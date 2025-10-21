@@ -1,0 +1,98 @@
+:root {
+  --primary: #4caf50;
+  --primary-hover: #43a047;
+  --bg: #f9fafb;
+  --card-bg: #ffffff;
+  --border: #e5e7eb;
+  --text-main: #333;
+  --text-sub: #555;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+}
+
+h1 {
+  color: var(--primary);
+  /* 1em: 부모 요소의 폰트 크기를 기준으로 함 */
+  font-size: 1.8em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0;
+}
+
+h1::before {
+  /* 해당 선택자 요소 출력 전에 이모지 등 내용 추가 */
+  content: '📢';
+  font-size: 1.4em;
+}
+
+h2 {
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 4px;
+  margin-top: 40px;
+  color: var(--text-main);
+}
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+button {
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.notice {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notice strong {
+  font-size: 1.1em;
+  color: var(--text-main);
+}
