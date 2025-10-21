@@ -38,7 +38,7 @@ async function fetchUserData() {
 async function fetchCustomerData() {
   try {
     // 실제 로직이 구현되는 블록
-    let data = await fetch('url'); // fetch() 함수: Response 객체를 반환
+    let data = await fetch('https://jsonplaceholder.typicode.com/users/1'); // fetch() 함수: Response 객체를 반환
 
     if (!data.ok) {
       throw new Error('네트워크 응답이 실패되어 데이터를 정상적으로 가져오지 못하였습니다.');
@@ -54,7 +54,7 @@ async function fetchCustomerData() {
 
     //? cer: console.error();
     //    - 콘솔 출력문이 빨간색으로 예외처럼 출력
-    console.error(error);
+    console.error(error); // TypeError: Failed to parse URL from url
   }
 }
 
