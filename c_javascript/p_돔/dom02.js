@@ -39,7 +39,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // 배열 메서드 콜백함수의 인자: 각 요소, 인덱스번호, 배열그자체
     const width = (index + 1) * 100; // 100, 200, 300, 400
 
-    dog.setAttribute('width', width);
-    dog.setAttribute('height', '250px');
+    // dog.setAttribute('width', width);
+    // dog.setAttribute('height', '250px');
+
+    //? 요소의 속성에 접근
+    dog.style.width = width + 'px';
+    dog.style.height = '250px'
+
+    //? cf) HTML 표준에 정의된 속성
+    //      : setAttribute(), getAttribute() 사용
+    //      +) 내장된 속성들은 .(점) 연산자를 사용하여 속성 읽기 또는 설정 가능
+    dog.src = '../강아지이미지.jpg';
+    dog.alt = '강아지 이미지';
   });
+});
+
+//? 3) 스타일 조작하기
+// : 문서 객체의 스타일 조작 시 style 속성 사용
+
+// cf) style 속성은 JS에서 객체로 인식
+// : 문서객체.style.스타일속성명;
+// >> 식별자에 -(하이픈) 사용 X 
+// >> lowerCamelCase 사용 권장
+
+// EX) text-align: textAlign
+//     font-size: fontSize
+
+document.addEventListener('DOMContentLoaded', () => {
+  const divs = document.querySelectorAll('#container div');
+
+  divs.forEach((div, index) => {
+    const gradation = index * 10; // 0 ~ 230
+
+    div.style.height = '10px';
+    div.style.backgroundColor 
+      = `rgb(${gradation}, ${gradation}, ${gradation})`;
+
+    // cf) style 객체 사용 시
+    //    : .연산자 사용 권장
+    // - h1.style.스타일속성명
+    // - h1.style['스타일속성명']
+    // - h1.style['스타일-속성명']
+  })
 });
