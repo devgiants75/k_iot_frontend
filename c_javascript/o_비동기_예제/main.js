@@ -15,7 +15,7 @@ async function loadNotices() {
       <strong>${notice.title}</strong> <em>(${notice.author})</em>
       <br />
       <p>${notice.content}</p>
-      <small>등록일: ${new Date(notice.createdAt).toLocaleString()}</small>
+      <small>등록일: ${new Date(notice.createdAt + "Z").toLocaleString()}</small>
     `;
 
     // 삭제 버튼 생성 및 이벤트 등록
