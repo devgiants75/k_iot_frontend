@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 갤러리</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- 
+  ! 이미지 갤러리 기능 구현
+
+  1) 썸네일(대표 이미지)을 출력
+    : 썸네일 아래 나열된 5개의 이미지 중 첫 번째 이미지
+
+  2) 썸네일 아래의 이미지 중 원하는 이미지 선택으로 썸네일을 변경
+
+  3) 다크 모드 / 라이트 모드 전환
+    : 하나의 버튼을 통해 토글(toggle) 기능
+  -->
+  <h1>이미지 갤러리 - 웹 표준 미니 프로젝트</h1>
+
+  <!-- 썸네일 / 하위의 이미지 바 -->
+  <div class="full-img">
+    <img src="./images/dog1.jpg" alt="대표 썸네일" class="displayed-img" />
+    <!-- 
+      overlay: 씌우다 (다크모드 사용 시 필터) 
+        >> 다크모드 기법 중 하나 
+          (특정 색상 레이어 위에 반투명한 어두운 필터를 겹쳐서 색상을 어둡게 표현하는 방식)
+    -->
+    <div class="overlay"></div>
+    <button class="dark">다크 모드</button>
+  </div>
+
+  <div class="thumb-bar">
+    <img src="./images/dog1.jpg" alt="강아지 이미지">
+    <img src="./images/dog2.jpg" alt="강아지 이미지">
+    <img src="./images/dog3.jpg" alt="강아지 이미지">
+    <img src="./images/dog4.jpg" alt="강아지 이미지">
+    <img src="./images/dog5.jpg" alt="강아지 이미지">
+  </div>
+  
+  <script src="./main.js"></script>
+</body>
+</html>
