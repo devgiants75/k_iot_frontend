@@ -71,4 +71,11 @@ async function getWeatherData(city) {
 
 function displayWeather(data) {
   //! 검색 결과값(해당 도시의 날씨 데이터)을 브라우저에 출력
+  const weatherInfoDiv = document.getElementById('weather-info');
+  weatherInfoDiv.innerHTML = `
+    <h2>${data.name}의 날씨</h2>
+    <p>현재 온도: ${data.main.temp}</p>
+    <p>체감 온도: ${data.main.feels_like}</p>
+    <p>날씨: ${data.weather[0].main} (${data.weather[0].description})</p>
+  `;
 }
