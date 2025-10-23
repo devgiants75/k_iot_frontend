@@ -126,6 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function flipCard() {
     if (!isGameStarted || lockBoard) return; 
 
+    if (this === firstCard) return;
+
     //? this 키워드
     //  : 함수 선언문에서 this는 해당 함수가 실행된 객체 그 자체
     this.classList.add('flipped');
