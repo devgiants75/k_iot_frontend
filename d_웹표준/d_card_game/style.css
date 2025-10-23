@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 10px;
+}
+
+#total-container {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgb(242, 251, 237);
+  border-radius: 10px;
+}
+
+#game-container {
+  height: 90%;
+  margin-bottom: 20px;
+}
+
+
+#card-container {
+  width: 100%;
+
+  /* 
+    card-container 내부에 요소 12개(카드)를 3행 4열로 배치
+  */
+  display: grid;
+
+  /* 
+    열) 세로값 지정: 4개씩 같은 비율로 4번 반복 
+                  (=== 4개의 열을 1의 비율로 설정)  
+    행) 가로값 지정: 3개씩 같은 비율로 3번 반복
+  */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.card {
+  width: 100%;
+  height: 150px;
+  display: inline-block;
+  /* 
+  ! 원근법 지정 속성
+    : 주로 100px에서 1000px의 값을 사용하여 원하는 깊이 효과를 지정
+    - 부모 요소에 지정 시 자식 요소(.card-inner)에 3D 효과 지정
+
+    ? 값이 작을 수록 3D 효과가 극명 (요소들이 더 가까이 있는 것 처럼)
+    ? 값이 클수록 3D효과가 부드러워짐 (요소가 멀리 있는 것 처럼)
+  */
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+
+  /* 
+    ! 자식 요소들이 3D 공간 내에서 자신의 위치와 회전 상태를 유지
+      : .card-front와 .card-back이 3D 좌표계에 배치
+        >> 서로 다른 요소로 개별적인 회전, 이동 등의 변환 적용 가능
+  */
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+/* .card요소에 .flipped class 속성이 있는 경우 */
+.card.flipped .card-inner {
+  /* y축을 기준으로 요소를 180도 전환 */
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  /* 부모 요소를 기준으로 배치 (절대적으로 보여짐) */
+  position: absolute;
+
+  /*
+  요소의 뒷면을 보이지 않도록 설정
+  : 회전을 통해 바뀌는 뒷단을 보이지 않도록 설정 
+  */
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  border-radius: 10px;
+}
+
+#button-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  background-color: rgba(15, 125, 40, 0.8);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: rgba(4, 180, 49, 0.8);
+  transform: scale(1.05);
+}
