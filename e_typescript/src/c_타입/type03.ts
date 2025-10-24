@@ -71,6 +71,26 @@ arrayReturnFunc(4); // [4, 4]
 // 변수 isStudent를 선언하고 불리언 타입으로 어노테이션을 지정
 // 위 두 변수에 적절한 값을 할당하고, 콘솔에 출력
 
+let age: number;
+let isStudent: boolean;
+
+age = 123;
+isStudent = true;
+
+console.log(`Age: ${age}, IsStudent: ${isStudent}`);
+
 //! 문제 2: 타입 별칭 사용
 // ProductType이라는 타입 별칭을 생성
 // 객체, id (문자열 타입), name (문자열 타입), price (숫자 타입) 속성 포함
+
+type ProductType = {
+  id: string;
+  name: string;
+  price: number;
+}
+
+let product: ProductType = {
+  id: '1',
+  name: '삼성 노트북',
+  price: 2000
+}
