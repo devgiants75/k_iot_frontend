@@ -77,3 +77,22 @@ h1 {
 #task-list li:hover {
   background-color: #cce0ff;
 }
+
+#task-list input[type='checkbox'] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#task-list button {
+  background-color: #ff5c5c;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#task-list button:hover {
+  background-color: #e60000;
+}
