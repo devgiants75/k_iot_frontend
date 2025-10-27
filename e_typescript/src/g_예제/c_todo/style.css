@@ -1,0 +1,79 @@
+body {
+  background-color: #f0f4f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+#container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #007acc;
+}
+
+#task-count {
+  margin-bottom: 10px;
+  color: #007acc;
+}
+
+#task-input {
+  width: calc(100% - 50px);
+  padding: 10px;
+  border: 2px solid #007acc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#add-button {
+  background-color: #007acc;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: white;
+
+  transition: background-color 0.3 ease;
+}
+
+#add-button:hover {
+  background-color: #005f99;
+}
+
+#task-list {
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 동적으로 생성될 각 할 일 목록 스타일링 */
+#task-list li {
+  background-color: #e6f2ff;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+#task-list li:hover {
+  background-color: #cce0ff;
+}
