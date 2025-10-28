@@ -72,3 +72,10 @@ body {
   color: #555;
   margin: 0;
 }
+
+#page-number {
+  align-self: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}

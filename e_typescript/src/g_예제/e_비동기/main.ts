@@ -74,6 +74,7 @@ function renderPhotos(photos: PhotoType[]) {
   });
 }
 
+
 //! 버튼 이벤트 등록
 document.getElementById('prev-button')!.addEventListener('click', () => {
   // 이벤트가 등록될 DOM 요소에 대한 단언: !기호
@@ -95,6 +96,12 @@ async function updatePhotos() {
   const photos = await fetchPhotos(currentPage);
 
   renderPhotos(photos);
+
+  const pageNumberElement = document.getElementById('page-number');
+
+  if (pageNumberElement) {
+    pageNumberElement.textContent = `${currentPage}`;
+  }
 }
 
 updatePhotos();
