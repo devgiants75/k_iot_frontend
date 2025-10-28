@@ -1,0 +1,106 @@
+body {
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+button {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#task-list {
+  margin-top: 20px;
+}
+
+.task-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-item button {
+  background-color: red;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.task-item button:hover {
+  background-color: darkred;
+}
+
+/* 모달 창 스타일링 */
+#task-modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  /* 텍스트에 주로 첨부되는 밑줄 효과, 기타 부연 이벤트 방지 */
+  text-decoration: none;
+}
+
+#task-input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}

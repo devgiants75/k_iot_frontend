@@ -3,10 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>할 일 관리 시스템 (TaskManager)</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <div id="app">
+    <h1>Task Logger(할 일 저장소)</h1>
+    <button id="log-task-button">Task 기록</button>
+
+    <!-- 동적 요소로 할 일 목록 나열 -->
+    <div id="task-list"></div>
+  </div>
+
+  <div id="task-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Enter Task Description</h2>
+      <input type="text" id="task-input" placeholder="Task Description" />
+      <button id="add-task-button">Task 추가</button>
+    </div>
+  </div>
   
   <script src="./main.js"></script>
 </body>
