@@ -1,0 +1,74 @@
+body {
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#app {
+  background-color: #fff;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  border-radius: 10px;
+  text-align: center;
+
+  /* app 내부에서 크기가 커질 경우 생기는 스크롤 제거 */
+  overflow: hidden;
+}
+
+#photo-container {
+  display: grid; 
+  /* 컨테이너 내부 요소가 2열의 공간이 같은 비율로 할당 */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+#button-container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#prev-button, #next-button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#prev-button:hover, #next-button:hover {
+  background-color: #0056b3;
+}
+
+.photo-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.photo-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.photo-item p {
+  font-weight: bold;
+  color: #555;
+  margin: 0;
+}
