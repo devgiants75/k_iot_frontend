@@ -89,7 +89,7 @@ const showModal = (user: User) => {
 }
 
 //@ 5. 사용자 리스트에 이벤트 리스너 추가
-const addEventListener = (users: UsersType) => {
+const addEventListeners = (users: UsersType) => {
   const userList = document.getElementById('user-list');
 
   if (userList) {
@@ -126,14 +126,24 @@ const addEventListener = (users: UsersType) => {
   if (modal && closeModal) {
     closeModal.addEventListener('click', () => {
       modal.style.display = 'none';
-    })
+    });
+
+    // 브라우저 전체를 DOM 요소로 반환 (브라우저 탭의 전체 영역)
+    // : window
+
+    // cf) document: window에 로드되는 HTML 문서 그 자체
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
   }
 }
 
 const init = async() => {
   const users = await fetchUsers();
   displayUsers(users);
-  addEventListener(users);
+  addEventListeners(users);
 }
 
 document.addEventListener('DOMContentLoaded', init);

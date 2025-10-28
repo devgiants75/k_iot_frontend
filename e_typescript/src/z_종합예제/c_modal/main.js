@@ -92,7 +92,7 @@ var showModal = function (user) {
     }
 };
 //@ 5. 사용자 리스트에 이벤트 리스너 추가
-var addEventListener = function (users) {
+var addEventListeners = function (users) {
     var userList = document.getElementById('user-list');
     if (userList) {
         userList.addEventListener('click', function (e) {
@@ -121,6 +121,14 @@ var addEventListener = function (users) {
         closeModal.addEventListener('click', function () {
             modal.style.display = 'none';
         });
+        // 브라우저 전체를 DOM 요소로 반환 (브라우저 탭의 전체 영역)
+        // : window
+        // cf) document: window에 로드되는 HTML 문서 그 자체
+        window.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
     }
 };
 var init = function () { return __awaiter(_this, void 0, void 0, function () {
@@ -131,7 +139,7 @@ var init = function () { return __awaiter(_this, void 0, void 0, function () {
             case 1:
                 users = _a.sent();
                 displayUsers(users);
-                addEventListener(users);
+                addEventListeners(users);
                 return [2 /*return*/];
         }
     });
