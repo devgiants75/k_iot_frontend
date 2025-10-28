@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index.html(Fetch User Data)</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>Fetch User Data</h1>
+
+    <input 
+      type="text"
+      id="userId"
+      placeholder="Enter User ID (1 ~ 10)"
+      min="1"
+      max="10"
+    />
+
+    <button id="fetchUserData">Fetch User Data</button>
+
+    <!-- 
+      데이터 요청 결과에 따라 요소 내용 변화
+      - 작업 처리 중: 대기 메시지
+      - 작성 성공: 사용자 데이터
+      - 작성 실패: 에러 메시지
+    -->
+    <div id="userData"></div>
+  </div>
+  
+  <script src="./main.js"></script>
+</body>
+</html>
