@@ -56,7 +56,7 @@ const createUserCard = (user: User): HTMLElement => {
 }
 
 //! 생성된 카드를 화면에 출력하는 함수
-const displayUsers = (users: User[]) => {
+const displayUsers = (users: Users) => {
   const userList = document.getElementById('user-list');
 
   if (userList) {
