@@ -41,7 +41,7 @@ class TaskLogger {
     taskItem.className = 'task-item';
 
     taskItem.innerHTML = `
-      <span>${task.description} - ${task.timestamp.toLocaleString()}</span>
+      <p>${task.description} - ${task.timestamp.toLocaleString()}</p>
       <button data-task-id=${task.id}>Delete</button>
     `;
 

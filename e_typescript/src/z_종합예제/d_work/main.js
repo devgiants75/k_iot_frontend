@@ -26,7 +26,7 @@ var TaskLogger = /** @class */ (function () {
     TaskLogger.prototype.createTaskElement = function (task) {
         var taskItem = document.createElement('div');
         taskItem.className = 'task-item';
-        taskItem.innerHTML = "\n      <span>".concat(task.description, " - ").concat(task.timestamp.toLocaleString(), "</span>\n      <button data-task-id=").concat(task.id, ">Delete</button>\n    ");
+        taskItem.innerHTML = "\n      <p>".concat(task.description, " - ").concat(task.timestamp.toLocaleString(), "</p>\n      <button data-task-id=").concat(task.id, ">Delete</button>\n    ");
         return taskItem;
     };
     TaskLogger.prototype.renderTasks = function () {

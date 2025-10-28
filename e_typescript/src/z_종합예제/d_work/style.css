@@ -41,16 +41,17 @@ button:hover {
 }
 
 .task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
   border: 1px solid #ddd;
   margin-bottom: 10px;
   background-color: #fafafa;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .task-item button {
+  margin-bottom: 0;
   background-color: red;
   border: none;
   border-radius: 3px;
