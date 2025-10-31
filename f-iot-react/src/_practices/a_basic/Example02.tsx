@@ -32,8 +32,8 @@ import React from 'react'
 //     (2) 배열 렌더링
 //         div 내에서 done이 true면 텍스트 앞에 👉 첨부, 아니면 그냥 출력 //^ <TodoItem /> 컴포넌트 사용 (+ key / props)
 
-//@ Z_Example02 컴포넌트 (데이터 정의 및 전달)
-function Z_Example02() {
+//@ Example02 컴포넌트 (데이터 정의 및 전달)
+function Example02() {
   // const todos: Todo[] = [
   //   { id: 1, text: "React 문법 복습", done: true },
   //   { id: 2, text: "Props 이해하기", done: false },
@@ -47,4 +47,4 @@ function Z_Example02() {
   )
 }
 
-export default Z_Example02
+export default Example02

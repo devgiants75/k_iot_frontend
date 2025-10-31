@@ -18,7 +18,7 @@ import React from 'react'
 2) message가 있으면 "name: message"를, 없으면 "name: Hello!"를 출력
   : 조건부 렌더링 또는 단락 평가 || 사용
 
-3) Z_Example() 컴포넌트에서 아래의 배열을 렌더링
+3) Example01() 컴포넌트에서 아래의 배열을 렌더링
 
 const users = [
   { name: '곰', message: '오늘도 파이팅!' },
@@ -28,10 +28,10 @@ const users = [
 
 */
 
-function Z_Example01() {
+function Example01() {
   return (
-    <div>Z_Example</div>
+    <div>Example</div>
   )
 }
 
-export default Z_Example01
+export default Example01
