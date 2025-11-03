@@ -3,6 +3,7 @@ import './App.css'
 import Basic from '@/pages/a_basic'; 
 import RoutePages from '@/pages/b_Route';
 import Navibar from './components/Navibar';
+import PostList from './_practices/a_basic/PostList';
 // 파일명 없으면 무조건! 해당 파일의 index 라는 이름의 파일을 가져옴
 
 function App() {
@@ -22,8 +23,9 @@ function App() {
         */}
         <Route path='/route/*' element={<RoutePages />} />
 
-      </Routes>
+        <Route path='/practice/post' element={<PostList />} />
 
+      </Routes>
     </>
   )
 }
