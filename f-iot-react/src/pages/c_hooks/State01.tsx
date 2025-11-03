@@ -24,8 +24,6 @@ import React, { useState } from 'react'
 
 // const [state, setState] = useState(); - 사용 X
 
-
-
 function State01() {
   //? 기본 구조와 명명 규칙
   // const [state, setState] = useState<type>(initialValue);
@@ -36,11 +34,60 @@ function State01() {
   // 명명 규칙 : set + 상태명 (name -> setName, count -> setCount, post -> setPost)
 
   //? useState 호출 규칙
-  // - 반드시 컴포넌트의 최상단에서 호출! 
+  //@ - 반드시 컴포넌트의 최상단에서 호출! 
   //   : 조건문, 반복문, 내부 함수에서 호출 불가!
+  //@ - hooks는 React 내부의 함수 - import 해서 사용!
+  // - 여러 개의 상태 사용 시, 관련 있는 훅끼리 묶어서 컴포넌트 상단에 배치 -> 가독성 향상
+
+  // if (true) {
+  //   const [state, setState] = useState();
+  // }
+
+  //^ === HOOKS (useState) === //
+  //? useState 실습 예제 - 카운터 컴포넌트
+  const [count, setCount] = useState<number>(0);
+  const [message, setMessage] = useState<string>('안녕하세요');
+  // if (true) {
+    const [msg, setMsg] = useState<string>('반갑습니다');
+  // }
+
+  //^ 이벤트 핸들러 정의
+  //? 이벤트 핸들러 내에서 count값 변경: 상태 설정 함수 사용
+  //@ 1) 상태 설정 함수를 그대로 사용
+  //    : 이전의 상태를 직접 참조
+  //    > 주로 현재(이전, 최신)의 값과 관련이 없는 변화가 이루어질 경우 사용
+  const handleUpClick = () => {
+    // setCount(5); // 상태 설정 함수의 인자값이 상태 변수로 전달!
+    // setCount(count + 1); // 0 + 1 === 1
+    // setCount(count + 1); // 0 + 1 === 1 
+
+    //@ 2) 함수형 컴포넌트 사용
+    //    : 현재(이전, 최신)의 상태값을 기반으로 상태를 업데이트 하는 경우 사용
+    // cf) set- 상태 변경 함수 내에서 콜백 함수
+    //     setCount(() => {})
+    //     >> 해당 콜백 함수의 인자는 '상태의 최신값!' 
+    //     >> prev-상태명 (prevName, prevCount, prevUser / previous 이전의)
+    setCount(prevCount => prevCount + 1); // 0 + 1 === 1
+    setCount(prevCount => prevCount + 1); // 1 + 1 === 2
+  }
+
+  const handleDownClick = () => {
+    // setCount(count - 1);
+    // setCount(count - 1);
+
+    setCount(prevCount => prevCount - 1);
+    setCount(prevCount => prevCount - 1);
+  }
 
   return (
-    <div>State01</div>
+    <div>
+      <p>카운트 클릭 횟수: {count}</p>
+      <button onClick={handleUpClick}>카운트 +2 증가</button>
+      <button onClick={handleDownClick}>카운트 -2 감소</button>
+
+      <p>{message}</p>
+      <p>{msg}</p>
+    </div>
   )
 }
 
