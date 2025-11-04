@@ -100,12 +100,31 @@ function Practice01() {
 
   //@ 30초 마다 자동 새로고침 (폴링)
   useEffect(() => {
+    const interval = setInterval(() => {
+      console.log('예약 데이터 자동 새로고침');
+      fetchReservations();
+    }, 30000); // 30초
 
+    // 언마운트 시 타이머 정리 (메모리 누수 방지)
+    return () => {
+      clearInterval(interval);
+      console.log('폴링 중단 (컴포넌트 언마운트)');
+    }
   }, []);
 
   //@ 예약 상태 변경 핸들러
   const updateReservationStatus = async (id: number, newStatus: ReservationStatus) => {
+    try {
+      // 실제 API 환경에서는 HTTP PUT 요청 전송
+      console.log(`PUT /api/v1/reservations/${id} -> ${newStatus}`);
 
+      // UI 즉시 반영
+      setReservations(prev => prev.map(reservation => 
+        reservation.id === id ? { ...reservation, status: newStatus } : reservation
+      ));
+    } catch (e) {
+      console.error("예약 상태 변경 실패", e);
+    }
   }
 
   //! 4. 로딩 / 에러 / 성공 분기 렌더링
