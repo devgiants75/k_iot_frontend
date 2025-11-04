@@ -27,12 +27,24 @@ function Ref02() {
     });
   }
 
+  const handleButtonFocus = () => {
+    // current 속성값에 요소의 참조값이 담겨져 있음
+    if (inputRef.current) { // useRef와 연결된 DOM 요소가 있다면
+      inputRef.current.focus();
+    }
+  }
+
   return (
     <div>
       {/* //@ 이전 상태 기억 */}
       <p>현재 카운트: {count}</p>
       <p>이전 카운트: {prevCountRef.current}</p>
       <button onClick={increment}>증가</button>
+
+      <br />
+      {/* //@ DOM 요소 참조 - 직접 조작: ref 속성에 요소의 참조값을 등록 */}
+      <input type="text" ref={inputRef} />
+      <button onClick={handleButtonFocus}>input에 포커스</button>
     </div>
   )
 }
