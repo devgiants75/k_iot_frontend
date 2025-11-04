@@ -60,7 +60,7 @@ export const tmp = '';
 // C. useMemo는 DOM 접근용이다
 // D. 둘 다 완전히 동일한 동작을 한다
 
-//? 9. 아래 코드의 출력 결과로 옳은 것은?
+//? 9. 아래 코드의 출력 결과로 옳은 것은??
 /*
   const getValue = useCallback(() => 10, []);
   console.log(getValue());

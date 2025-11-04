@@ -51,7 +51,7 @@ export const tmp = '';
 
 //? 7. useEffect 내부에서 비동기 함수를 직접 사용할 수 있다. (O/X)
 
-//? 8. 아래 코드에서 console.log는 언제 실행되는가?
+//? 8. 아래 코드에서 console.log는 언제 실행되는가??
 /*
   useEffect(() => {
     console.log('count changed');
