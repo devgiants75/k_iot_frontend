@@ -7,13 +7,14 @@ import Hooks from '@/pages/c_hooks';
 import Navibar from './components/Navibar';
 import PostList from './_practices/a_basic/PostList';
 import PostDetail from './components/PostDetail';
+import { useEffect } from 'react';
 // 파일명 없으면 무조건! 해당 파일의 index 라는 이름의 파일을 가져옴
 
 function App() {
   return (
     <>
       {/* 경로와 상관없이 렌더링 */}
-      <h1>Korea IoT React</h1>
+      <h3>Korea IoT React</h3>
       <Navibar />
 
       {/* Routes 태그: Route를 감싸는 컴포넌트 */}
