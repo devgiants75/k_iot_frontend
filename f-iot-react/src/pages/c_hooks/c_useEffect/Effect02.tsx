@@ -78,12 +78,14 @@ function Effect02() {
       />
       {loading && <div>게시물을 로딩 중입니다.</div>}
       {error && <div>Error: {error}</div>}
+      {/* '
       {filteredPosts.map((post) => (
         <li key={post.id}>
           <h5>{post.title}</h5>
           <p>{post.body}</p>
         </li>
-      ))}
+      ))} 
+       */}
     </div>
   );
 }
