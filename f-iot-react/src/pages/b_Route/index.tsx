@@ -1,8 +1,13 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Link, Route, Routes } from 'react-router-dom'
 import A_DashBoardStats from './A_DashBoardStats'
 import A_DashBoardSettings from './A_DashBoardSettings'
 import A_DashBoard from './A_DashBoard'
+import C_useNavigate from './C_useNavigate'
+import D_useLocation from './D_useLocation'
+import E_NaviExample from './E_NaviExample'
+import E_LocationExample from './E_LocationExample'
+import E_DetailPage from './E_DetailPage'
 
 //! React Router DOM
 // : React 애플리케이션에서 라우팅을 담당하는 "라이브러리"
@@ -47,13 +52,30 @@ const h2Style = {
   color: 'orange'
 }
 
+/*
+  Router 내부 컴포넌트들의 path 속성
+  1) /로 시작하는 경우 
+      : 메인 Route 경로에서 시작
+      : http://localhost:5173
+
+  2) /로 시작하지 않는 경우
+      : 현재 컴포넌트의 경로를 기준으로 시작
+      : http://localhost:5173/route/ 
+*/
+
 function Index() {
   return (
     <div>
       <h1 style={{ backgroundColor: 'black', color: 'white' }}>
         === 리액트 라우터 돔 ===
       </h1>
-      <h2 style={h2Style}>1. 중첩(Nested) 라우트 예시</h2>
+
+      <Link to='/route/dashboard'>중첩 라우팅: dashboard</Link> <br />
+      <Link to='/route/navigate'>useNaviate</Link> <br />
+      <Link to='/route/location'>useLocation</Link> <br />
+      <Link to='/route/navi'>종합 예제</Link>
+
+      {/* /routes */}
       <Routes>
         {/* /dashboard */}
         <Route path='dashboard' element={<A_DashBoard />}>
@@ -64,6 +86,14 @@ function Index() {
           <Route path='settings' element={<A_DashBoardSettings />} />
 
         </Route>
+
+        <Route path='navigate' element={<C_useNavigate />} />
+        <Route path='location' element={<D_useLocation />} />
+
+        {/* useNavigate & useLocation 예제 */}
+        <Route path='navi' element={<E_NaviExample />} />
+        <Route path='locate' element={<E_LocationExample />} />
+        <Route path='detail' element={<E_DetailPage />} />
       </Routes>
     </div>
   )
