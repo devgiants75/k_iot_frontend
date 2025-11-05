@@ -14,6 +14,8 @@ type CountAction =
   { type: 'decrement' } | 
   { type: 'reset' };
 
+// type A = { type: 'increment' | 'decrement' | 'reset' };
+
 const initialValue: CountState = {
   count: 0,
   step: 2
