@@ -15,7 +15,7 @@ export function useSearch(initialValue: string = '') {
   const [query, setQuery] = useState<string>(initialValue);
   const [results, setResults] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   // 컴포넌트가 처음 마운팅 될 때 input에 포커스 자동 지정
   useEffect(() => {
@@ -67,6 +67,6 @@ export function useSearch(initialValue: string = '') {
     loading,
     inputRef,
     handleSearch,
-    reset,
+    reset
   }
 }

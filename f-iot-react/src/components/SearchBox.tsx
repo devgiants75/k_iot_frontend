@@ -10,7 +10,7 @@ interface SearchBoxProps {
   setQuery: React.Dispatch<React.SetStateAction<string>>; //^ 검색어 변경 함수
   handleSearch: () => void; //^ 검색 실행 함수
   reset: () => void; //^ 초기화 함수
-  inputRef: React.RefObject<HTMLInputElement>; //^ input 참조
+  inputRef: React.RefObject<HTMLInputElement | null>; //^ input 참조
   loading: boolean; //^ 로딩 상태
 }
 
