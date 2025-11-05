@@ -21,6 +21,7 @@ import Reducer02 from "./e_useReducer/Reducer02";
 import Custom01 from "./f_custom/Custom01";
 import Custom02 from "./f_custom/Custom02";
 import Custom03 from "./f_custom/Custom03";
+import TodoAppLocalStorage from "@/_practices/c_hooks/TodoAppLocalStorage";
 
 function Index() {
   return (
@@ -28,6 +29,10 @@ function Index() {
       <h1 style={{ backgroundColor: "black", color: "white" }}>
         === 리액트 Hooks ===
       </h1>
+
+      <ToggleSection title="7. 리액트 Hooks - Todo(LocalStorage)">
+        <TodoAppLocalStorage />
+      </ToggleSection>
 
       <ToggleSection title="6. 리액트 Hooks - custom Hooks">
         <Custom01 /> <hr />
