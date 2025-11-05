@@ -16,6 +16,8 @@ import Effect02 from "./c_useEffect/Effect02";
 import Effect_Practice01 from "./c_useEffect/Practice01";
 import UseCallback from "./d_callback_memo/A_UseCallback";
 import UseMemo from './d_callback_memo/B_UseMemo';
+import Reducer01 from "./e_useReducer/Reducer01";
+import Reducer02 from "./e_useReducer/Reducer02";
 
 function Index() {
   return (
@@ -24,6 +26,11 @@ function Index() {
         === 리액트 Hooks ===
       </h1>
 
+      <ToggleSection title="5. 리액트 Hooks - useReducer">
+        <Reducer01 /> <hr />
+        <Reducer02 />
+      </ToggleSection>
+      
       <ToggleSection title="4. 리액트 Hooks - useCallback & useMemo">
         <UseCallback /> <hr />
         <UseMemo />
