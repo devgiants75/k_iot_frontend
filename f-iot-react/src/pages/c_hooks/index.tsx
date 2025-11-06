@@ -22,7 +22,6 @@ import Custom01 from "./f_custom/Custom01";
 import Custom02 from "./f_custom/Custom02";
 import Custom03 from "./f_custom/Custom03";
 import TodoAppLocalStorage from "@/_practices/c_hooks/TodoAppLocalStorage";
-import Webcam from "./Webcam";
 
 function Index() {
   return (
