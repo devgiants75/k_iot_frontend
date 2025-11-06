@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css'
 import Basic from '@/pages/a_basic'; 
 import RoutePages from '@/pages/b_Route';
@@ -8,6 +8,11 @@ import Navibar from './components/Navibar';
 import PostList from './_practices/a_basic/PostList';
 import PostDetail from './components/PostDetail';
 import SearchApp from './_practices/c_hooks/SearchApp';
+import Z_Products from './pages/b_Route/Z_Products';
+import Z_ProductDetail from './pages/b_Route/Z_ProductDetail';
+import Z_ProductInfo from './pages/b_Route/Z_ProductInfo';
+import Z_ProductReviews from './pages/b_Route/Z_ProductReviews';
+import Z_Dashboard from './pages/b_Route/Z_Dashboard';
 // 파일명 없으면 무조건! 해당 파일의 index 라는 이름의 파일을 가져옴
 
 function App() {
@@ -33,6 +38,17 @@ function App() {
         <Route path='/practice/post/:id' element={<PostDetail />} />
         <Route path='/practice/search' element={<SearchApp /> } />
 
+        {/* //@ pages/b_Route - Z_실습 코드 */}
+        {/* 절대경로 */}
+        <Route path='/' element={<Navigate to="/products" />} />
+        <Route path='/products' element={<Z_Products />} />
+        <Route path='/products/:id' element={<Z_ProductDetail />}>
+          {/* 중첩 라우트: 상대경로 */}
+          <Route path='info' element={<Z_ProductInfo />} />
+          <Route path='reviews' element={<Z_ProductReviews />} />
+        </Route>
+        <Route path='/dashboard' element={<Z_Dashboard />} />
+        
       </Routes>
     </>
   )
