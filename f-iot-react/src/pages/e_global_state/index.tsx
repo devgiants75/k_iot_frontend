@@ -1,6 +1,7 @@
 import ToggleSection from "@/components/ToggleSection";
 import React from "react";
 import A_Context from "./A_Context";
+import B_Zustand from "./B_Zustand";
 
 function Index() {
   return (
@@ -11,6 +12,10 @@ function Index() {
 
       <ToggleSection title="1. Context API">
         <A_Context />
+      </ToggleSection>
+
+      <ToggleSection title="2. Zustand">
+        <B_Zustand />
       </ToggleSection>
 
     </div>

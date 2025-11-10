@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react'
+import { useCountStore } from './B_Zustand';
 
 //! 전역 상태 관리 (Global State)
 // : 애플리케이션의 여러 컴포넌트에서 공유해야하는 상태를 중앙에서 관리하는 패턴
@@ -125,6 +126,7 @@ const ExampleNavibar = () => {
 
 
 function A_Context() {
+  const { count } = useCountStore();
   return (
     <div>
       <UserProvider>
@@ -137,6 +139,7 @@ function A_Context() {
       </UserProvider>
       {/* UserContext가 UserProvider 내에서 사용되지 않음 */}
       {/* <ExampleHeader /> */}
+      {count}
     </div>
   )
 }
