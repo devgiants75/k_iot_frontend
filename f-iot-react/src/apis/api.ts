@@ -66,4 +66,4 @@ api.interceptors.response.use(response => response, async (e) => {
     // 에러 객체 구조 통일
     return Promise.reject(e);
   }
-})
+});
