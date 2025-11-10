@@ -1,6 +1,11 @@
+import type { ArticleListResponse } from '@/apis/articleApi';
 import React from 'react'
 
-function C_ArticleForm() {
+interface Props {
+  onSuccess: (newArticle: ArticleListResponse) => void;
+}
+
+function C_ArticleForm({ onSuccess }: Props) {
   return (
     <div>C_ArticleForm</div>
   )

@@ -57,7 +57,7 @@ function C_ArticlePage() {
 
       {/* //@ 오른쪽 - 작성 폼 */}
       <div style={{ width: "30%" }}>
-        <C_ArticleForm onSucess={handleArticleCreated} />
+        <C_ArticleForm onSuccess={handleArticleCreated} />
       </div>
     </div>
   )

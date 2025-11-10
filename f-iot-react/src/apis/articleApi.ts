@@ -27,7 +27,7 @@ export interface ArticleListResponse {
 export type ArticleListResponseList = ArticleListResponse[];
 
 //? 게시글 응답 DTO (Detail)
-interface ArticleDetailResponse {
+export interface ArticleDetailResponse {
   id: number;
   title: string;
   content: string;
