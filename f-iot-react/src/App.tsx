@@ -4,6 +4,7 @@ import Basic from '@/pages/a_basic';
 import RoutePages from '@/pages/b_Route';
 import Hooks from '@/pages/c_hooks';
 import HTTP from '@/pages/d_http';
+import GlobalState from '@/pages/e_global_state';
 
 import Navibar from './components/Navibar';
 import PostList from './_practices/a_basic/PostList';
@@ -34,6 +35,7 @@ function App() {
         <Route path='/route/*' element={<RoutePages />} />
         <Route path='/hooks' element={<Hooks />} />
         <Route path='/http' element={<HTTP />} />
+        <Route path='/global-state' element={<GlobalState />} />
 
         {/* //@ _practice 실습 코드 */}
         <Route path='/practice/post' element={<PostList />} />
