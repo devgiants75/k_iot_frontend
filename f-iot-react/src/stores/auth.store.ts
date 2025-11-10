@@ -65,50 +65,6 @@ const withEnhanders = <T>(
 // >> persist나 devtools로 로직을 감싸면 내부 제네릭이 변경
 //    : 타입 명시가 없으면 타입 에러 발생
 
-// export const useAuthStore = create<AuthState>()(
-//   withEnhanders((set, get) => ({
-//     // 초기 상태
-//     user: null,
-//     accessToken: null,
-//     isLoading: false,
-//     error: null,
-
-//     // -- 액션 정의
-//     setUser: (u) => set({ user: u }),
-//     setAccessToken: (token) => set({ accessToken: token }),
-
-//     login: async (loginId, password) => {
-//       set({ isLoading: true, error: null });
-//       try {
-//         const data = await signIn({ loginId, password });
-//         set({
-//           user: { id: 1, loginId: data.username },
-//           accessToken: data.accessToken,
-//           isLoading: false
-//         });
-//       } catch (e) {
-//         set({
-//           isLoading: false,
-//           error: (e as Error).message ?? "로그인 실패",
-//         });
-//       }
-//     },
-//     logout: () => {
-//       set({
-//         user: null,
-//         accessToken: null
-//       });
-//     }, 
-//     refreshToken: async () => {
-//       try {
-//         const newToken = 'refreshed-token';
-//         set({ accessToken: newToken });
-//       } catch (e) {
-//         set({ error: (e as Error).message })
-//       }
-//     },
-//   }))
-// );
 export const useAuthStore = create<AuthState>(
   set => ({
     // 초기 상태
@@ -153,3 +109,49 @@ export const useAuthStore = create<AuthState>(
     },
   })
 );
+
+
+// export const useAuthStore = create<AuthState>()(
+//   withEnhanders((set, get) => ({
+//     // 초기 상태
+//     user: null,
+//     accessToken: null,
+//     isLoading: false,
+//     error: null,
+
+//     // -- 액션 정의
+//     setUser: (u) => set({ user: u }),
+//     setAccessToken: (token) => set({ accessToken: token }),
+
+//     login: async (loginId, password) => {
+//       set({ isLoading: true, error: null });
+//       try {
+//         const data = await signIn({ loginId, password });
+//         set({
+//           user: { id: 1, loginId: data.username },
+//           accessToken: data.accessToken,
+//           isLoading: false
+//         });
+//       } catch (e) {
+//         set({
+//           isLoading: false,
+//           error: (e as Error).message ?? "로그인 실패",
+//         });
+//       }
+//     },
+//     logout: () => {
+//       set({
+//         user: null,
+//         accessToken: null
+//       });
+//     }, 
+//     refreshToken: async () => {
+//       try {
+//         const newToken = 'refreshed-token';
+//         set({ accessToken: newToken });
+//       } catch (e) {
+//         set({ error: (e as Error).message })
+//       }
+//     },
+//   }))
+// );
