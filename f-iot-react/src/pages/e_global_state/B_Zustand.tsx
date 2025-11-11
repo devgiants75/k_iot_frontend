@@ -1,7 +1,7 @@
 import { useAuthStore } from '@/stores/auth.store';
 import React from 'react'
 import { create } from 'zustand';
-
+ 14
 //! Zustand (독일어: '상태')
 // : 상태 관리 라이브러리 
 // - React Hooks 기반 + 최소한의 API를 사용하여 상태를 쉽게 생성하고 접근
