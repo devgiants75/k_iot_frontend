@@ -25,7 +25,7 @@ function SignIn() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <h2>로그인</h2>
+        <span>로그인</span>
         <input
           type="text"
           placeholder="아이디"

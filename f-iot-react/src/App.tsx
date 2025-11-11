@@ -15,13 +15,34 @@ import Z_ProductDetail from './pages/b_Route/Z_ProductDetail';
 import Z_ProductInfo from './pages/b_Route/Z_ProductInfo';
 import Z_ProductReviews from './pages/b_Route/Z_ProductReviews';
 import Z_Dashboard from './pages/b_Route/Z_Dashboard';
+import SignOut from './components/SignOut';
+import { useAuthStore } from './stores/auth.store';
+import { useEffect } from 'react';
+import SignIn from './pages/e_global_state/SignIn';
 // 파일명 없으면 무조건! 해당 파일의 index 라는 이름의 파일을 가져옴
 
 function App() {
+  const { user, tryRefreshToken, accessToken } = useAuthStore();
+
+  useEffect(() => {
+    if (!accessToken) {
+      tryRefreshToken();
+    }
+  }, [accessToken, tryRefreshToken]);
+
   return (
     <>
       {/* 경로와 상관없이 렌더링 */}
-      <h3>Korea IoT React</h3>
+      <h3>Korea IoT React
+        {user ? (
+          <>
+            <h3>{user.loginId}님 환영합니다</h3>
+            <SignOut />
+          </>
+        ) : (
+          <SignIn />
+        )}
+        </h3>
       <Navibar />
 
       {/* Routes 태그: Route를 감싸는 컴포넌트 */}

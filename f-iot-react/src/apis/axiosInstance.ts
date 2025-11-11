@@ -17,6 +17,7 @@ export const publicApi = axios.create({
     "Content-Type": "application/json",
     Accept: "application/json"
   },
+  withCredentials: true,
 });
 
 //? 2. 인증 인스턴스 (토큰이 필요한 API)
