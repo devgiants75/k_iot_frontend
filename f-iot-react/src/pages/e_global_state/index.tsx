@@ -4,7 +4,7 @@ import A_Context from "./A_Context";
 import B_Zustand from "./B_Zustand";
 import SignIn from "./SignIn";
 import GlobalData from "./GlobalData";
-import TrunckReservationList from "./TrunckReservationList";
+import TrunckReservationList from "./TruckReservationList";
 
 function Index() {
   return (
