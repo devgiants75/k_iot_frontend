@@ -75,7 +75,6 @@ export const useReservationStore = create<ReservationState>((set) => ({
     } catch (e) {
       return null;
     }
-
   },
   setSelectedTruckId: (truckId) => set({ selectedTruckId: truckId }),
   setSelectedTimeSlot: (timeSlot) => set({ selectedTimeSlot: timeSlot }),
