@@ -52,7 +52,11 @@ function TruckDetailPage() {
         <ul className='truck-list' role='list'>
           {exampleTrucks.map(truck => (
             <li key={truck.id}>
-              <button type='button' className={`truck-list-btn ${selectedTruckId === truck.id ? "active" : ""}`}>
+              <button 
+                type='button' 
+                className={`truck-list-btn ${selectedTruckId === truck.id ? "active" : ""}`}
+                onClick={() => handleSelectTruck(truck.id)}
+              >
                 {truck.name}
               </button>
             </li>
