@@ -17,7 +17,7 @@ type UseInputReturn = {
 export function useInput(initialValue: string) {
   const [value, setValue] = useState<string>(initialValue);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setValue(e.target.value);
   }
 
