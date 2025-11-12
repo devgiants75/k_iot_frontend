@@ -4,6 +4,7 @@ import A_Context from "./A_Context";
 import B_Zustand from "./B_Zustand";
 import SignIn from "./SignIn";
 import GlobalData from "./GlobalData";
+import TrunckReservationList from "./TrunckReservationList";
 
 function Index() {
   return (
@@ -26,6 +27,10 @@ function Index() {
       
       <ToggleSection title="4. zustand 연습(global-data)">
         <GlobalData />
+      </ToggleSection>
+      
+      <ToggleSection title="5. zustand 연습(reservation)">
+        <TrunckReservationList />
       </ToggleSection>
 
     </div>

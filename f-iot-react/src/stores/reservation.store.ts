@@ -3,6 +3,7 @@
 // - 푸드트럭 예약/ 주문 같은 실제 "비즈니스 로직" 상태
 // - 특정 가게(트럭)의 예약 내역을 불러오고, 선택한 가게(트럭)과 타임슬롯을 관리
 
+import { getAllReservations } from "@/apis/reservationApi";
 import { create } from "zustand";
 
 //@ 원산지) types 폴더!
@@ -26,4 +27,15 @@ interface ReservationState {
 }
 
 // 스토어 생성
-export const useReservationStore = create<ReservationState>();
+export const useReservationStore = create<ReservationState>((set) => ({
+  selectedTrunckId: null,
+  selectedTimeSlot: null,
+  reservationList: [],
+
+  fetchReservations: async (trunckId) => {
+    // const reservations: ReservationsResponse = await getAllReservations(trunckId);
+    const reservations = await getAllReservations(trunckId);
+    set({ reservationList: reservations })
+  },
+  clearSelection: () => set({ selectedTrunckId: null, selectedTimeSlot: null }),
+}));
