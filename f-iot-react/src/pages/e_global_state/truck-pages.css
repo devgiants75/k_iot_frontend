@@ -1,0 +1,188 @@
+/* truck-pages.css */
+.truck-page-container {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  color: #111;
+  background-color: #f6f8fa;
+  min-height: 100vh;
+}
+
+.truck-sidebar {
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.truck-sidebar-title {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.truck-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.truck-list-btn {
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border: none;
+  /* 부모 색상 상속 */
+  background-color: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.truck-list-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.truck-list-btn:focus {
+  background-color: #e6f0ff;
+  font-weight: 500;
+}
+
+/* main 영역 */
+.truck-main {
+  flex: 1;
+}
+
+.truck-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.truck-current {
+  font-size: 14px;
+  color: #374151;
+}
+
+/* 컨텐츠 그리드 */
+.truck-container-grid {
+  display: grid;
+  /* 
+    열을 기준으로 그리드(표)의 형식으로 배치
+    : 비율 최소크기값
+  */
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+}
+
+/* 패널 공통 */
+.panel {
+  background-color: #fff;
+  border: 1px solid #e6e9ee;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.03);
+}
+
+.panel-title {
+  font-size: 18px;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+.reservation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reservation-item {
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 8px;
+  background-color: #fafafa;
+  cursor: pointer;
+  border: 1px solid #f1f5f9;
+  transition: background-color 0.15s ease, transform 0.08 ease;
+}
+
+.reservation-item:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-1px);
+}
+
+.reservation-item.selected {
+  background-color: #e6f0ff;
+}
+
+.reservation-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reservation-timeslot {
+  font-weight: 600;
+}
+
+.reservation-status {
+  font-size: 12px;
+  color: #374151;
+}
+
+.reservation-user {
+  font-size: 12px;
+  color: #4b5563;
+}
+
+/* 상세 */
+.detail-row {
+  display: flex;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.detail-label {
+  min-width: 80px;
+  color: #374151;
+  font-weight: 600;
+}
+
+.detail-value {
+  flex: 1;
+  color: #111827;
+}
+
+.primary-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.danger-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ef4444;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.small-btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+}

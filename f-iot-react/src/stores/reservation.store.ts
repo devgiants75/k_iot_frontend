@@ -37,7 +37,7 @@ export const useReservationStore = create<ReservationState>((set) => ({
 
   fetchReservations: async (truckId) => {
     // const reservations: ReservationsResponse = await getAllReservations(trunckId);
-    const reservations = await getAllReservations(truckId);
+    const reservations: Reservation[] = await getAllReservations(truckId);
     set({ reservationList: reservations, selectedTruckId: truckId })
   },
   fetchReservationById: async (truckId, reservationId) => {

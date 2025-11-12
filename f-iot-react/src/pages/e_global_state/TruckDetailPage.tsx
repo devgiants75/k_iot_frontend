@@ -2,6 +2,7 @@ import TruckReservationDetail from '@/components/TruckReservationDetail';
 import TruckReservationList from '@/components/TruckReservationList';
 import { useReservationStore } from '@/stores/reservation.store';
 import React, { useEffect } from 'react'
+import '@/pages/e_global_state/truck-pages.css'
 
 //! 가게(트럭)에 대한 상세 페이지
 // : 가게 상세 정보 페이지
