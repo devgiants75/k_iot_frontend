@@ -41,18 +41,10 @@ export const useReservationStore = create<ReservationState>((set) => ({
     set({ reservationList: reservations, selectedTruckId: truckId })
   },
   fetchReservationById: async (truckId, reservationId) => {
-    const dto = await getReservation(truckId, reservationId);
-    if (!dto) return null;
+    try {
+      const dto = await getReservation(truckId, reservationId);
+      if (!dto) return null;
 
-    // store에 단건을 리스트에 반영하거나 반환만 가능
-    // : 리스트에 해당 항목이 있으면 덮어쓰고, 없으면 앞에 추가
-    // > set 설정 함수는 내부에 콜백함수를 가짐 (해당 콜백함수의 매개변수는 상태의 최신값)
-    set((state) => {
-      // some()메서드
-      // : 배열의 요소 중 조건을 만족하는 요소가 하나 이상인 경우 true
-      // every()메서드
-      // : 배열의 요소가 모두 해당 조건을 만족할 경우 true
-      const exists = state.reservationList.some(reservation => reservation.id === dto.id);
       // 추가 또는 덮어쓸 객체
       const mapped = {
         id: dto.id,
@@ -62,13 +54,28 @@ export const useReservationStore = create<ReservationState>((set) => ({
         timeSlot: dto.timeSlot,
         status: dto.status
       } as Reservation;
+  
+      // store에 단건을 리스트에 반영하거나 반환만 가능
+      // : 리스트에 해당 항목이 있으면 덮어쓰고, 없으면 앞에 추가
+      // > set 설정 함수는 내부에 콜백함수를 가짐 (해당 콜백함수의 매개변수는 상태의 최신값)
+      set((state) => {
+        // some()메서드
+        // : 배열의 요소 중 조건을 만족하는 요소가 하나 이상인 경우 true
+        // every()메서드
+        // : 배열의 요소가 모두 해당 조건을 만족할 경우 true
+        const exists = state.reservationList.some(reservation => reservation.id === dto.id);
+        return {
+          reservationList: exists
+            ? state.reservationList.map(reservation => (reservation.id === dto.id ? mapped : reservation ))
+            : [ mapped, ...state.reservationList ],
+        }
+      });
 
-      return {
-        reservationList: exists
-          ? state.reservationList.map(reservation => (reservation.id === dto.id ? mapped : reservation ))
-          : [ mapped, ...state.reservationList ],
-      }
-    });
+      return mapped; // undefined를 방지하는 반환 - 해당 메서드의 반환 타입이 //@ Promise<Reservation | null>;
+    } catch (e) {
+      return null;
+    }
+
   },
   setSelectedTruckId: (truckId) => set({ selectedTruckId: truckId }),
   setSelectedTimeSlot: (timeSlot) => set({ selectedTimeSlot: timeSlot }),
