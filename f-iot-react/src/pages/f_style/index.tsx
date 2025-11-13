@@ -2,6 +2,7 @@ import React from 'react'
 import ToggleSection from '@/components/ToggleSection'
 import A_CSS from './A_CSS'
 import B_Module from './B_Module'
+import C_StyleComponents from './C_StyleComponents'
 
 function Index() {
   return (
@@ -16,6 +17,10 @@ function Index() {
       
       <ToggleSection title="2. Module CSS">
         <B_Module />
+      </ToggleSection>
+      
+      <ToggleSection title="3. Styled Components">
+        <C_StyleComponents />
       </ToggleSection>
     </div>
   )
