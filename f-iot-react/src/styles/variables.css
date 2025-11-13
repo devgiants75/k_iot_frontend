@@ -1,0 +1,47 @@
+/* variables.css */
+/* 
+css 내 변수 선언 방식 
+@ 1) :root {} 객체 생성
+@ 2) 내부 변수명 --스타일속성-특징 
+*/
+:root {
+  /* 색상 팔레트: 디자인 시스템의 색상 토큰 */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1e40af;
+  --color-secondary: #6b7280;
+  --color-bg: #f9fafb;
+  --color-text: #111827;
+
+  /* 
+    spacing: 간격 토큰, (컴포넌트 간격, padding, margin, gap 등에 일관되게 사용)
+    
+    cf) px VS rem 권장
+      : spacing은 rem(루트 폰트 기반)으로 정의하는 것이 유연함 (권장)
+      - 사용자가 브라우저 글꼴 크기를 변경했을 때 레이아웃도 비례해서 조정
+
+      EX) 16px === 1rem
+          8px === 0.5rem
+          4px === 0.25rem
+          40px === 2.5rem
+  */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+
+  /* radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --raduis-lg: 16px;
+
+  /* typography(타이포그래피) - 글자 크기/두께/행간/자간 등 */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.25rem; /* 20px */
+  --font-size-xl: 1.5rem; /* 24px */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}

@@ -1,0 +1,33 @@
+/* reset.css */
+* {
+  margin: 0;
+  padding: 0;
+  /* 
+  @ box-sizing: 요소의 너비와 높이를 계산하는 방법을 지정 
+    : border-box - 콘텐츠/패딩/보더까지를 너비, 높이로 계산
+    : content-box (기본값) 
+  */
+  box-sizing: border-box;
+}
+
+body {
+  /* 
+    페이지 전역 폰트 설정
+    : 폰트 관련 데이터는 assets/fonts에 저장
+  */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+a {
+  text-decoration: none;
+  /* inherit: 상속 */
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}

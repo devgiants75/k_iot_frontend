@@ -1,0 +1,20 @@
+/* flex.module.css */
+
+.flexRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}

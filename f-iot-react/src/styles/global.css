@@ -1,0 +1,29 @@
+/* global.css */
+html, body, #root {
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-md);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-hover);
+}

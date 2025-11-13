@@ -1,0 +1,17 @@
+/* B_Module.module.css */
+
+.button {
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.secondary {
+  background-color: var(--color-secondary);
+}
