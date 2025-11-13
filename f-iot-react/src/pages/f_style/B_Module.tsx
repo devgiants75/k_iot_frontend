@@ -3,6 +3,7 @@ import styles from './B_Module.module.css';
 // import 객체명 from 'CSS Module 파일명';
 // > 객체명.클래스명;
 import flexStyles from './flex.module.css'
+import gridStyles from './grid.module.css'
 
 //! CSS Module
 // : 전역적인 CSS 적용 X, 컴포넌트 단위로 CSS를 작성하는 기능 (모듈화)
@@ -60,25 +61,71 @@ export const Header = () => {
 //@ Dashboard 컴포넌트: grid 사용
 // cf) 주로 대시보드, 상품 카드 리스트, 갤러리 형태에 사용
 //     : 가로/세로 모두 관리할 때 강력하게 배치 가능
+
+//^ Grid 레이아웃 시스템
+// 1) 설계 방향: 행(row)과 열(column)의 격자(grid) 기반
+// 2) 주요 목적: 복잡한 카드 / 대시보드 / 갤러리 레이아웃 구성
+// 3) 적용 대상: display: grid;를 가진 부모 컨테이너
+
+//^ 기본 속성 정리
+// display: grid;         - 그리드 컨테이너 활성화 
+// gird-template-columns  - 열 개수 / 크기 정의    EX) repeat(3, 1fr)
+// gird-template-rows     - 행 개수 / 크기 정의    EX) auto 200px 1fr
+// gap                    - 아이템 간 간격         EX) gap: 16px;
+
 export const Dashboard = () => {
   return (
-    <section className={gridStyles.dashboard}>
-      <h3>오늘 예약 현황</h3>
-      <div className={gridStyles.stats}>
-        <div className={girdStyles.card}>
-          <h4>예약 완료</h4>
-          <p>24건</p>
+    <>
+      <section className={gridStyles.dashboard}>
+        <h3>오늘 예약 현황</h3>
+        <div className={gridStyles.stats}>
+          <div className={gridStyles.card}>
+            <h4>예약 완료</h4>
+            <p>24건</p>
+          </div>
+          <div className={gridStyles.card}>
+            <h4>예약 완료</h4>
+            <p>24건</p>
+          </div>
+          <div className={gridStyles.card}>
+            <h4>예약 완료</h4>
+            <p>24건</p>
+          </div>
         </div>
-        <div className={girdStyles.card}>
-          <h4>예약 완료</h4>
-          <p>24건</p>
+      </section>
+      <hr />
+      <section className={gridStyles.dashboard}>
+        {/* 3개의 아이템이 자동으로 3열 구조로 배치 */}
+        <div 
+          style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(3, 1fr)'
+            }}
+        >
+          <div style={{ padding: '16px', border: '1px solid #ddd'}}>1</div>
+          <div style={{ padding: '16px', border: '1px solid #ddd'}}>2</div>
+          <div style={{ padding: '16px', border: '1px solid #ddd'}}>3</div>
+          <div style={{ padding: '16px', border: '1px solid #ddd'}}>4</div>
         </div>
-        <div className={girdStyles.card}>
-          <h4>예약 완료</h4>
-          <p>24건</p>
+      </section>
+      <hr />
+      <section>
+        <div className={gridStyles.gridResponse}>
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div key={i}>카드 {i  + 1}</div>
+          ))}
         </div>
-      </div>
-    </section>
+      </section>
+      <hr />
+      <section>
+        <div className={gridStyles.gridLayout}>
+          <div className={gridStyles.item1}>1</div>
+          <div className={gridStyles.item2}>2</div>
+          <div className={gridStyles.item3}>3</div>
+        </div>
+      </section>
+    </>
+
   )
 }
 
@@ -88,6 +135,7 @@ function B_Module() {
     <div>
       <Header />
       <Button />
+      <Dashboard />
     </div>
   )
 }

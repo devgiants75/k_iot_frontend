@@ -1,0 +1,72 @@
+/* grid.module.css */
+
+.dashboard {
+  padding: var(--space-lg);
+  background-color: var(--color-bg);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.card {
+  background-color: #fff;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* 반응형 grid 레이아웃 */
+.gridResponse {
+  /* 자식 요소들을 그리드 아이템으로 배치 */
+  display: grid;
+  /* 
+  1) repeat() 함수
+    : 해당 열/행을 반복해서 생성
+      EX) repeat(2, 1fr): 1의 비율을 가진 열을 2개 생성 (즉, 2등분)
+  
+  2) auto-fit VS auto-fill
+    : 둘 다 남는 공간에 가능한 한 많은 칸을 자동으로 채워주는 역할
+    > auto-fit
+      : 빈 칸이 있으면 접기 -> 남는 공간을 기존 칸이 늘어져서 차지
+    > auto-fill
+      : 가능한 칸만큼 자리를 미리 잡아둠 (grid 칸이 계속 유지되어 빈 칸이 있음)
+
+    ? UI 상 카드들이 여백 없이 꽉 차길 원한다면
+      auto-fit을 더 많이 사용
+
+  3) minmax()
+    : 각 칸의 최소 크기와 최대 크기를 지정
+  */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: '20px';
+}
+
+.gridLayout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-행/열: 각 행과 열 지정 시 */
+  /* grid-template-행/열: 100px 200px 300px */
+  grid-template-rows: 200px 200px;
+  gap: 16px;
+}
+
+.item1 {
+  /* 2칸 차지 */
+  grid-column: span 1;
+  background-color: #111;
+}
+
+.item2 {
+  grid-column: span 2;
+  background-color: #555;
+}
+
+.item3 {
+  grid-column: span 1;
+  background-color: #ddd;
+}
