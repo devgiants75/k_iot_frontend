@@ -11,17 +11,23 @@ import Navibar from './components/Navibar';
 import PostList from './_practices/a_basic/PostList';
 import PostDetail from './components/PostDetail';
 import SearchApp from './_practices/c_hooks/SearchApp';
+import Dashboard from './_practices/d_emotion/Dashboard';
+
 import Z_Products from './pages/b_Route/Z_Products';
 import Z_ProductDetail from './pages/b_Route/Z_ProductDetail';
 import Z_ProductInfo from './pages/b_Route/Z_ProductInfo';
 import Z_ProductReviews from './pages/b_Route/Z_ProductReviews';
 import Z_Dashboard from './pages/b_Route/Z_Dashboard';
-import { useUIStore } from './stores/ui.store';
+
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Toast from './components/Toast';
+
 import { useGlobalStore } from './stores/global.store';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { darkTheme, lightTheme } from './_practices/d_emotion/theme';
+import { ThemeProvider } from '@emotion/react';
+import { GlobalStyles } from './_practices/d_emotion/global';
 // 파일명 없으면 무조건! 해당 파일의 index 라는 이름의 파일을 가져옴
 
 function App() {
@@ -39,18 +45,26 @@ function App() {
   // const { 전역상태내부의 속성 또는 함수명 } = useUIStore(); 
   // > 내부의 모든 속성과 메서드 호출 후 좌항에 일치하는 값만을 남김
 
-  // 필요한 속성, 메서드만 뽑아서 반환
-  const darkMode = useUIStore(state => state.darkMode); // true: 다크 / false: 라이트
+  //^ 필요한 속성, 메서드만 뽑아서 반환
+  // const darkMode = useUIStore(state => state.darkMode); // true: 다크 / false: 라이트
 
-  const appStyle = {
-    minHeight: '100vh',
-    backgroundColor: darkMode ? "#111" : "#fff",
-    color: darkMode ? "#bbb" : "#111",
-    transition: "all 0.3s ease"
-  }
+  //^ const appStyle = {
+  //   minHeight: '100vh',
+  //   backgroundColor: darkMode ? "#111" : "#fff",
+  //   color: darkMode ? "#bbb" : "#111",
+  //   transition: "all 0.3s ease"
+  // }
+
+  const [isDark, setIsDark] = useState<boolean>(false);
+  const toggleTheme = () => setIsDark(prev => !prev);
+
+  const theme = isDark ? darkTheme : lightTheme;
 
   return (
-    <div style={appStyle}>
+    // <div style={appStyle}>
+    //? ThemeProvider: 전역 테마를 Emotion 스타일에서 바로 사용 가능
+    <ThemeProvider theme={theme}>
+      <GlobalStyles theme={theme} />
       {/* 경로와 상관없이 렌더링 */}
       <Header />
       <Sidebar />
@@ -74,6 +88,7 @@ function App() {
         <Route path='/practice/post' element={<PostList />} />
         <Route path='/practice/post/:id' element={<PostDetail />} />
         <Route path='/practice/search' element={<SearchApp /> } />
+        <Route path='/p/dashboard' element={<Dashboard toggleTheme={toggleTheme} /> } />
 
         {/* //@ pages/b_Route - Z_실습 코드 */}
         {/* 절대경로 */}
@@ -88,7 +103,7 @@ function App() {
         
       </Routes>
       <Toast />
-    </div>
+    </ThemeProvider>
   )
 }
 
