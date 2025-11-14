@@ -1,6 +1,9 @@
 import styled from '@emotion/styled';
 import React from 'react'
 import ThemeToggle from './ThemeToggle';
+import { CardContainer, CardTitle } from './Card';
+import SalesChartChartJS from './charts/SalesChartChartJS';
+import SalesChartRecharts from './charts/SalesChartRecharts';
 
 function Dashboard({ toggleTheme }: { toggleTheme: () => void }) {
   // 예시 데이터 (mock data)
@@ -20,7 +23,31 @@ function Dashboard({ toggleTheme }: { toggleTheme: () => void }) {
       <Grid>
         {datas.map(data => (
           // 카드 컴포넌트
+          //? 배열을 순회하여(map) 나열되는 컴포넌트들은
+          //  , 각 컴포넌트의 구별을 위해 key 속성이 필수!!
+          //  >> key 속성값은 고유값이어야 한다!
+          <CardContainer key={data.title}>
+            <CardTitle>{data.title}</CardTitle>
+            <div
+              style={{
+                fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)',
+                fontWeight: 700
+              }}
+            >{data.value}</div>
+          </CardContainer>
         ))}
+
+        {/* 차트 섹션: Chart.js 버전 */}
+        <CardContainer>
+          <CardTitle>매출(Chart.js)</CardTitle>
+          <SalesChartChartJS />
+        </CardContainer>
+
+        {/* 차트 섹션: Recharts 버전 */}
+        <CardContainer>
+          <CardTitle>매출(Recharts)</CardTitle>
+          <SalesChartRecharts />
+        </CardContainer>
       </Grid>
     </Page>
   )
